@@ -174,6 +174,8 @@ GameObject:
   - component: {fileID: 212975254239921132}
   - component: {fileID: 8590411089985949314}
   - component: {fileID: 8590411089985949317}
+  - component: {fileID: 1455627864917254963}
+  - component: {fileID: 8590411089985949318}
   m_Layer: 0
   m_Name: Boss Placeholder
   m_TagString: Untagged
@@ -266,7 +268,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988959072326566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62a0a81359f0b6c4a8ece8eb19e85ccb, type: 3}
   m_Name: 
@@ -274,3 +276,27 @@ MonoBehaviour:
   bulletsAmount: 30
   startAngle: 90
   endAngle: 270
+--- !u!114 &1455627864917254963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988959072326566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c88638d604524a48afd2b3dd4447b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8590411089985949318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988959072326566}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620a63d50501d7741beee827cdabcd51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
