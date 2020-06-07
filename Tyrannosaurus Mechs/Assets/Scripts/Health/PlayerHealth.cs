@@ -15,7 +15,7 @@ public class PlayerHealth : Health
 
     void Update()
     {
-        healthText.text = currentHealth.ToString("0") + " / " + maxHealth.ToString("0");
+        //healthText.text = currentHealth.ToString("0");
     }
 
     void Start()
@@ -39,12 +39,12 @@ public class PlayerHealth : Health
 
     void Death(float param)
     {
-        Respawn();
+        //Respawn();
     }
 
-    void Respawn()
-    {
-        transform.position = respawnPoint;
-        currentHealth = maxHealth;
-    }
+    //void Respawn()
+    //{
+    //    transform.position = respawnPoint;
+    //    currentHealth = maxHealth;
+    //}
 }

@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
     }
 
+    void Start()
+    {
+        autoMove = true;
+    }
+
     void Update()
     {
         if (autoMove)
