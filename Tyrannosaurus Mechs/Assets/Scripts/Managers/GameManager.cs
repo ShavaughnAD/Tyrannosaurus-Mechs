@@ -7,12 +7,12 @@ public class GameManager : MonoBehaviour
     public float timer;
     public Text textBox;
     public Text scoreText;
-    public int score;
-    public PlayerMovement playerMovement;
-    
-    
-    bool gameStarted = false;
 
+    public int score;
+    public int scoreNeeded;
+    public int lives;
+
+    public GameObject Player;
     void Awake()
     {
         gameManager = this;
@@ -20,25 +20,29 @@ public class GameManager : MonoBehaviour
         textBox.enabled = false;
         scoreText.text = score.ToString();
         scoreText.enabled = false;
+        scoreNeeded = 500;
     }
 
     void Update()
     {
-        AddExtraHealth();
+        if (Input.GetKey(KeyCode.P))
+        {
+            score++;
+        }
+
+        if (score >= scoreNeeded)
+        {
+            AddExtraHealth();
+        }
+
         scoreText.text = "Score: " + score.ToString();
         textBox.text = "Time: " + Mathf.Round(timer).ToString();
-
-        if (gameStarted)
-        {
-            timer += 1 * Time.deltaTime;
-        }
     }
 
     public void AddExtraHealth()
     {
-        //After Score Has Reached A Certain Value, this function will do whats necessary
-        //Have the if checks here, but the function will continually be called in Update
-        //Performance currently isn't a concern so calling this is Update continually should be fine
+        lives += 1;
+        scoreNeeded = score * 2;
     }
 
     public void BeginGame()
@@ -47,7 +51,7 @@ public class GameManager : MonoBehaviour
         //This includes Timer, CameraMovement, etc...
         scoreText.enabled = true;
         textBox.enabled = true;
-        playerMovement.enabled = true;
+        timer += 1 * Time.deltaTime;
     }
 
     public void LevelCompleted()
@@ -57,8 +61,15 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        if (lives <= 0)
+        {
+            Debug.Log("Game Over");
+        }
+        else
+        {
+            lives--;
+        }
         //Bring up Game Over Screen Here
-
     }
 
     public void CheckHighScore()
@@ -66,3 +77,5 @@ public class GameManager : MonoBehaviour
 
     }
 }
+
+
