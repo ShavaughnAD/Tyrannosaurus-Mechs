@@ -1036,7 +1036,40 @@ MonoBehaviour:
   - {fileID: 4224044340378432796, guid: cc553eb3cb22c174693ad2cd41767e44, type: 3}
   - {fileID: 5220993734245657369, guid: ce3ac7a5ddb175345996436e4c6d9384, type: 3}
   playerStartPoint: {fileID: 0}
+  playerShipDescription:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   characterSelectScreen: {fileID: 1502825506}
+  pilotSelectScreen: {fileID: 0}
+  pilots:
+  - pilotName: Jet Jaguar
+    pilotDescription: 'Increases Speed by 3
+
+      Decreases Damage by 2
+
+      Decreases
+      Cooldown 2'
+    damageModifier: -2
+    speedModifier: 3
+    coolDownModifier: -2
+  - pilotName: Basic Bob
+    pilotDescription: 'No Positives
+
+      No Negatives'
+    damageModifier: 0
+    speedModifier: 0
+    coolDownModifier: 0
+  - pilotName: Young Strong Jaw
+    pilotDescription: 'Decrease Speed by 2
+
+      Increases Damage by 3
+
+      Decreases
+      Cooldown by 6'
+    damageModifier: 3
+    speedModifier: -2
+    coolDownModifier: -6
 --- !u!1 &2433710569418409341
 GameObject:
   m_ObjectHideFlags: 0

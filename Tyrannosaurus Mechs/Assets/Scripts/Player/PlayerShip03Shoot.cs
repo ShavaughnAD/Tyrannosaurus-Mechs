@@ -1,15 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerShip03Shoot : MonoBehaviour
+public class PlayerShip03Shoot : PlayerMovement
 {
-    [SerializeField]
-    private Transform[] firePoints;
-    [SerializeField]
-    private GameObject projectilePrefab;
-    [SerializeField]
-    private float launchForce = 700f;
+    public Transform[] firePoints;
+    public GameObject projectilePrefab;
+    public float launchForce = 700f;
 
     public void Update()
     {
@@ -19,7 +14,7 @@ public class PlayerShip03Shoot : MonoBehaviour
         }
     }
 
-    private void LaunchProjectile()
+    void LaunchProjectile()
     {
         foreach (var firePoint in firePoints)
         {
