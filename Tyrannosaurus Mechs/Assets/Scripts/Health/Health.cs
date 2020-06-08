@@ -21,21 +21,21 @@ public class Health : MonoBehaviour
     public virtual void TakeDamage(float damageAmount)
     {
         if (immune) return;
-        if (currentHealth <= 0) return;
-        currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
-        if (currentHealth == 0)
-        {
-            onDeath.CallEvent(0);
-        }
-        else
-        {
-            damageTaken = damageAmount;
-            onHurt.CallEvent(currentHealth / maxHealth);   
-        }
+        onHurt.CallEvent(0);
+        //if (currentHealth <= 0) return;
+        //currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
+        //if (currentHealth == 0)
+        //{
+        //    onDeath.CallEvent(0);
+        //}
+        //else
+        //{
+        //    onHurt.CallEvent(currentHealth / maxHealth);   
+        //}
     }
 
     public virtual void ResetHealth()
     {
-        currentHealth = maxHealth;
+        currentHealth = 1;
     }
 }

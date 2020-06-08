@@ -34,7 +34,7 @@ public class PlayerHealth : Health
 
     void Hurt(float param)
     {
-
+        GameManager.gameManager.GameOver();
     }
 
     void Death(float param)
