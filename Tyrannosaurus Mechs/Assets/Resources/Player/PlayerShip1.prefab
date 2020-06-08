@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2476969938728919735}
   - component: {fileID: 2476969938728919734}
   - component: {fileID: 2476969938728919731}
+  - component: {fileID: 7001795098040203973}
   m_Layer: 0
   m_Name: PlayerShip1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,13 +109,13 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2476969938728919737}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -163,3 +164,16 @@ MonoBehaviour:
   damageTaken: 0
   healthText: {fileID: 0}
   respawnPoint: {x: 0, y: 0, z: 0}
+--- !u!114 &7001795098040203973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476969938728919737}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6703235eb786914c9d01edc7f476f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
