@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShip01Shoot : MonoBehaviour
+public class PlayerShip01Shoot : PlayerMovement
 {
     public GameObject PlayerShip01Bullet;
     public GameObject bulletPosition01;

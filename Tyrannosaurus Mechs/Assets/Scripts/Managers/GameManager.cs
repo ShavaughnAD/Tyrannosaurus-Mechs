@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     public Text textBox;
     public Text scoreText;
     public int score;
+    public PlayerMovement playerMovement;
+    
+    
+    bool gameStarted = false;
 
     void Awake()
     {
@@ -23,6 +27,11 @@ public class GameManager : MonoBehaviour
         AddExtraHealth();
         scoreText.text = "Score: " + score.ToString();
         textBox.text = "Time: " + Mathf.Round(timer).ToString();
+
+        if (gameStarted)
+        {
+            timer += 1 * Time.deltaTime;
+        }
     }
 
     public void AddExtraHealth()
@@ -38,8 +47,7 @@ public class GameManager : MonoBehaviour
         //This includes Timer, CameraMovement, etc...
         scoreText.enabled = true;
         textBox.enabled = true;
-        timer += 1 * Time.deltaTime;
-        
+        playerMovement.enabled = true;
     }
 
     public void LevelCompleted()

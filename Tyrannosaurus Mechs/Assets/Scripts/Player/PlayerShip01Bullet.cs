@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShip01Bullet : MonoBehaviour
+public class PlayerShip01Bullet : PlayerMovement
 {
     float speed;
 
