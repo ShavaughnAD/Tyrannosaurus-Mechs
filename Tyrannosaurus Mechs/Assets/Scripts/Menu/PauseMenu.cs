@@ -13,13 +13,15 @@ public class PauseMenu : MonoBehaviour
     public AudioSource audSrc;
     public AudioClip _On;
 
+    public GameObject charSelect;
+
     void Start()
     {
         pauseMenuUI = GameObject.Find("PausePanel");
         //thePlayer = GameObject.Find("Gup");
         audSrc = GetComponent<AudioSource>();
         pauseMenuUI.SetActive(false);
-        Cursor.visible = false;
+        charSelect = GameObject.Find("MainCanvas");
     }
 
     void Update()
@@ -35,6 +37,16 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        if (charSelect.activeInHierarchy == false)
+        {
+            Cursor.visible = false;
+        }
+        else if (charSelect.activeInHierarchy == true)
+        {
+            Cursor.visible = true;
+        }
+
     }
 
     public void Resume()
