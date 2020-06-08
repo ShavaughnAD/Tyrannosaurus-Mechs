@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 4586067091643388}
   - component: {fileID: 212725499558172736}
   - component: {fileID: 695004352}
+  - component: {fileID: -5668691215548607266}
+  - component: {fileID: -3703625855885377383}
   m_Layer: 0
   m_Name: PlayerBullet1 Placeholder
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,3 +96,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3576a80d5af50ef4e97cc6545f6f32c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 8
+  speed: 0
+--- !u!61 &-5668691215548607266
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939245619601230}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0029104613, y: 0.08004032}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.53233844, y: 0.20355436}
+    oldSize: {x: 0.09, y: 0.27}
+    newSize: {x: 0.09, y: 0.27}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.09, y: 0.27}
+  m_EdgeRadius: 0
+--- !u!50 &-3703625855885377383
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939245619601230}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

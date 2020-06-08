@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     Health playerHealth;
     public Rigidbody2D playerRB;
     public float moveSpeed = 5;
+    public float idleSpeed = 1;
 
     public float coolDownTimer = 10;
     public float weaponDamage = 10;
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     bool skillReady = true;
     public GameObject shield;
 
+    public string shipName;
     [TextArea]
     public string shipDescription;
 
@@ -30,14 +32,13 @@ public class PlayerMovement : MonoBehaviour
         autoMove = true;
     }
 
-    void Update()
+    public virtual void Update()
     {
-
         #region Movement Input
 
         if (autoMove)
         {
-            playerRB.transform.Translate(Vector2.up * .5f * Time.deltaTime);
+            playerRB.transform.Translate(Vector2.up *  idleSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.W))

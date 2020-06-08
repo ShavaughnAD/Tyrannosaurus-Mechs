@@ -9,21 +9,39 @@ public class CharacterSelect : MonoBehaviour
     public class Pilots
     {
         public string pilotName;
-        [TextArea]
-        public string pilotDescription;
+        [TextArea] public string pilotDescription;
         public int damageModifier;
         public int speedModifier;
         public float coolDownModifier;
+        public Sprite pilotSprite;
     }
 
+    public class Ships
+    {
+        //Will Comeback and make Ships a List so that it is easier to customize & work well with for Flexibility
+    }
+
+    [Header("Ships Variables")]
     public GameObject[] playerShip;
-    public Transform playerStartPoint;
+    public Text[] playerShipNames;
     public Text[] playerShipDescription;
+    public Image[] playerShipImage;
 
-    //public Image shipSelectImage;
+    [Header("Pilot Variables")]
+    public Text[] pilotName;
+    public Text[] pilotDescription;
+
+    [Header("Screens To Bring Up")]
     public GameObject characterSelectScreen;
+    public GameObject shipSelectScreen;
     public GameObject pilotSelectScreen;
+    public GameObject confirmationScreen;
 
+    [Header("Confirmation Screen Variables")]
+    public Image pilotChosen;
+    public Image shipChosen;
+
+    public Transform playerStartPoint;
     public List<Pilots> pilots;
 
     int shipSelected = 0;
@@ -33,50 +51,42 @@ public class CharacterSelect : MonoBehaviour
 
     void Awake()
     {
+        DisplayPilotInfo();
         DisplayShipInfo();
+        pilotSelectScreen.SetActive(false);
+        confirmationScreen.SetActive(false);
+        shipSelectScreen.SetActive(true);
     }
 
     public void ChooseShip(int ship)
     {
         shipSelected = ship;
+        shipSelectScreen.SetActive(false);
         pilotSelectScreen.SetActive(true);
-        playerShipMovement = playerShip[shipSelected].GetComponent<PlayerMovement>();
+        shipChosen.sprite = playerShip[shipSelected].GetComponent<SpriteRenderer>().sprite;
+        shipChosen.color = playerShip[shipSelected].GetComponent<SpriteRenderer>().color;
     }
 
     public void ChoosePilot(int pilot)
     {
         pilotSelected = pilot;
-        playerShipMovement.coolDownTimer += pilots[pilotSelected].coolDownModifier;
-        playerShipMovement.moveSpeed += pilots[pilotSelected].speedModifier;
-        playerShipMovement.weaponDamage += pilots[pilotSelected].damageModifier;
-        //switch (pilotSelected)
-        //{
-        //    case 0:
-        //        playerShipMovement.coolDownTimer = pilots[pilotSelected].coolDownModifier;
-        //        playerShipMovement.moveSpeed = pilots[pilotSelected].speedModifier;
-        //        playerShipMovement.weaponDamage = pilots[pilotSelected].damageModifier;
-        //        break;
-
-        //    case 1:
-        //        playerShipMovement.coolDownTimer = pilots[pilotSelected].coolDownModifier;
-        //        playerShipMovement.moveSpeed = pilots[pilotSelected].speedModifier;
-        //        playerShipMovement.weaponDamage = pilots[pilotSelected].damageModifier;
-        //        break;
-
-        //    case 2:
-        //        playerShipMovement.coolDownTimer = pilots[pilotSelected].coolDownModifier;
-        //        playerShipMovement.moveSpeed = pilots[pilotSelected].speedModifier;
-        //        playerShipMovement.weaponDamage = pilots[pilotSelected].damageModifier;
-        //        break;
-        //}
+        pilotSelectScreen.SetActive(false);
+        confirmationScreen.SetActive(true);
     }
 
-    public void Confirm()
+    public void ConfirmButton()
     {
         characterSelectScreen.SetActive(false);
-        Instantiate(playerShip[shipSelected], playerStartPoint.position, Quaternion.identity);
-        GameManager.gameManager.playerMovement = playerShipMovement;
+        GameObject ship= Instantiate(playerShip[shipSelected], playerStartPoint.position, Quaternion.identity);
+        playerShipMovement = ship.GetComponent<PlayerMovement>();
+        GameManager.gameManager.playerShipMovement = ship.GetComponent<PlayerMovement>();
+        ApplyPilotBenefits();
         GameManager.gameManager.BeginGame();
+    }
+
+    public void ReturnButton()
+    {
+        characterSelectScreen.SetActive(true);
     }
 
     public void EnableDisableScreen(GameObject enable, GameObject disable)
@@ -85,13 +95,32 @@ public class CharacterSelect : MonoBehaviour
         disable.SetActive(false);
     }
 
+    public void ApplyPilotBenefits()
+    {
+        playerShipMovement.coolDownTimer += pilots[pilotSelected].coolDownModifier;
+        playerShipMovement.moveSpeed += pilots[pilotSelected].speedModifier;
+        playerShipMovement.weaponDamage += pilots[pilotSelected].damageModifier;
+    }
+
     public void DisplayShipInfo()
     {
         for(int i = 0; i < playerShip.Length; i++)
         {
-            playerShipDescription[i].text = "Health: " + playerShip[i].GetComponent<Health>().maxHealth.ToString("F0") +
+            playerShipNames[i].text = playerShip[i].GetComponent<PlayerMovement>().shipName;
+            playerShipDescription[i].text = "Lives: " + playerShip[i].GetComponent<Health>().maxHealth.ToString("F0") +
                 "\n" +
                 playerShip[i].GetComponent<PlayerMovement>().shipDescription;
+            playerShipImage[i].sprite = playerShip[i].GetComponent<SpriteRenderer>().sprite;
+            playerShipImage[i].color = playerShip[i].GetComponent<SpriteRenderer>().color;
+        }
+    }
+
+    public void DisplayPilotInfo()
+    {
+        for(int i = 0; i < pilots.Count; i++)
+        {
+            pilotName[i].text = pilots[i].pilotName;
+            pilotDescription[i].text = pilots[i].pilotDescription;
         }
     }
 }

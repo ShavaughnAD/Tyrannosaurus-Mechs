@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6892032666298839496}
   - component: {fileID: 6724235089295167490}
   - component: {fileID: 6724235089295167489}
-  - component: {fileID: 6724235089295167491}
   - component: {fileID: 5354636773436353321}
+  - component: {fileID: 6889072194790557583}
   m_Layer: 0
   m_Name: PlayerShip3 Placeholder
   m_TagString: Player
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 8aeb9e233fbb8f14db39770841b78b94, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.99437773, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,20 +134,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48800302, y: 0.42480993}
   m_EdgeRadius: 0
---- !u!114 &6724235089295167491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6725026469722094428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57fd73eb5de32f540a429f71214dd2ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRB: {fileID: 6724235089295167490}
-  moveSpeed: 5
 --- !u!114 &5354636773436353321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,9 +146,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5262236db43665e439eaef6b591fc426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRB: {fileID: 0}
+  moveSpeed: 5
+  idleSpeed: 1
+  coolDownTimer: 10
+  weaponDamage: 10
+  shield: {fileID: 0}
+  shipName: Yellow Yardbird
+  shipDescription: Close Ranged
   firePoints: []
   projectilePrefab: {fileID: 0}
   launchForce: 700
+--- !u!114 &6889072194790557583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725026469722094428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f498aa51596f5104089e0c1d2f5c3b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
+  damageTaken: 0
+  healthText: {fileID: 0}
+  respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &6725476796102642876
 GameObject:
   m_ObjectHideFlags: 0

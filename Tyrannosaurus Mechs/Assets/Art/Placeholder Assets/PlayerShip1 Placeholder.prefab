@@ -154,10 +154,10 @@ GameObject:
   - component: {fileID: 1512706630}
   - component: {fileID: 1512706629}
   - component: {fileID: 1427766730031797143}
-  - component: {fileID: 1512706631}
+  - component: {fileID: 1864353084950797709}
   m_Layer: 0
   m_Name: PlayerShip1 Placeholder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +220,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 8aeb9e233fbb8f14db39770841b78b94, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.6367924, b: 0.6367924, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -289,11 +289,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e2045c49b081b43a44c6a3fb13f40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRB: {fileID: 0}
+  moveSpeed: 5
+  idleSpeed: 1
+  coolDownTimer: 10
+  weaponDamage: 10
+  shield: {fileID: 0}
+  shipName: Red Rocket
+  shipDescription: Shoots Straight Up
   PlayerShip01Bullet: {fileID: 1939245619601230, guid: d2f2f92c494bd1c41970791d8041c000,
     type: 3}
   bulletPosition01: {fileID: 152239284}
   bulletPosition02: {fileID: 1690505194}
---- !u!114 &1512706631
+--- !u!114 &1864353084950797709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,11 +310,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1512782934554904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57fd73eb5de32f540a429f71214dd2ed, type: 3}
+  m_Script: {fileID: 11500000, guid: f498aa51596f5104089e0c1d2f5c3b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRB: {fileID: 1512706630}
-  moveSpeed: 5
+  maxHealth: 3
+  currentHealth: 0
+  damageTaken: 0
+  healthText: {fileID: 0}
+  respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &1818141105757828
 GameObject:
   m_ObjectHideFlags: 0

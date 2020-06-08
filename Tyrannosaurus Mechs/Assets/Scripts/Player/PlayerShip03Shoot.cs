@@ -6,7 +6,7 @@ public class PlayerShip03Shoot : PlayerMovement
     public GameObject projectilePrefab;
     public float launchForce = 700f;
 
-    public void Update()
+    public override void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {

@@ -36,6 +36,6 @@ public class Health : MonoBehaviour
 
     public virtual void ResetHealth()
     {
-        currentHealth = 1;
+        currentHealth = maxHealth;
     }
 }

@@ -12,7 +12,11 @@ public class GameManager : MonoBehaviour
     public int scoreNeeded;
     public int lives;
 
-    public GameObject Player;
+    public GameObject player;
+    public PlayerMovement playerShipMovement;
+
+    public bool gameStarted = false;
+
     void Awake()
     {
         gameManager = this;
@@ -21,6 +25,14 @@ public class GameManager : MonoBehaviour
         scoreText.text = score.ToString();
         scoreText.enabled = false;
         scoreNeeded = 500;
+    }
+
+    void Start()
+    {
+        if(playerShipMovement == null)
+        {
+            playerShipMovement = FindObjectOfType<PlayerMovement>();
+        }
     }
 
     void Update()
@@ -33,6 +45,11 @@ public class GameManager : MonoBehaviour
         if (score >= scoreNeeded)
         {
             AddExtraHealth();
+        }
+
+        if(gameStarted == true)
+        {
+            timer += 1 * Time.deltaTime;
         }
 
         scoreText.text = "Score: " + score.ToString();
@@ -51,7 +68,6 @@ public class GameManager : MonoBehaviour
         //This includes Timer, CameraMovement, etc...
         scoreText.enabled = true;
         textBox.enabled = true;
-        timer += 1 * Time.deltaTime;
     }
 
     public void LevelCompleted()

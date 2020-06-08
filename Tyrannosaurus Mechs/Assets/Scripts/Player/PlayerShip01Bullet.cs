@@ -1,29 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerShip01Bullet : PlayerMovement
+public class PlayerShip01Bullet : MonoBehaviour
 {
-    float speed;
+    public float damage;
+    public float speed;
 
-    void Start()
+
+    void Awake()
     {
-        speed = 8f;
+        //damage = GameManager.gameManager.playerMovement.weaponDamage;
+        if(speed <= 0)
+        {
+            speed = 8;
+        }
     }
-
     
     void Update()
     {
         Vector2 position = transform.position;
-
         position = new Vector2(position.x, position.y + speed * Time.deltaTime);
-
         transform.position = position;
-
         Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
-
         if(transform.position.y > max.y)
         {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Enemy")
+        {
+            Debug.LogError(collision.name + " Recieved " + GameManager.gameManager.playerShipMovement.weaponDamage + "  Damage");
+            collision.GetComponent<Health>().TakeDamage(GameManager.gameManager.playerShipMovement.weaponDamage);
             Destroy(gameObject);
         }
     }

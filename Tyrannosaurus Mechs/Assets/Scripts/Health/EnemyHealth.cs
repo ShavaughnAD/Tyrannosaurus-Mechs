@@ -8,19 +8,36 @@ public class EnemyHealth : Health
     public override void Awake()
     {
         base.Awake();
-        onHurt.BindToEvent(Hurt);
-        onDeath.BindToEvent(Death);
+        //onHurt.BindToEvent(Hurt);
+        //onDeath.BindToEvent(Death);
         gameObject.layer = 10;
+        ResetHealth();
     }
 
-    void Hurt(float param)
+    public override void TakeDamage(float damageAmount)
     {
-
+        base.TakeDamage(damageAmount);
+        currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
+        if(currentHealth == 0)
+        {
+            Death();
+        }
     }
 
-    void Death(float param)
+    void Death()
     {
-        //ScoreSystem.Instance.AddScore(killScore);
+        //Increase score here
         Destroy(gameObject);
     }
+
+    //void Hurt(float param)
+    //{
+
+    //}
+
+    //void Death(float param)
+    //{
+    //    //ScoreSystem.Instance.AddScore(killScore);
+    //    Destroy(gameObject);
+    //}
 }
