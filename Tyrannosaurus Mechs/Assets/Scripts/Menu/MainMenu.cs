@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void Play()
+    public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
