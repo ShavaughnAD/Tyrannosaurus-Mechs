@@ -32,6 +32,7 @@ public class CharacterSelect : MonoBehaviour
     [Header("Pilot Variables")]
     public Text[] pilotName;
     public Text[] pilotDescription;
+    public Image[] pilotImage;
 
     [Header("Screens To Bring Up")]
     public GameObject characterSelectScreen;
@@ -79,6 +80,7 @@ public class CharacterSelect : MonoBehaviour
     public void ChoosePilot(int pilot)
     {
         pilotSelected = pilot;
+        pilotChosen.sprite = pilots[pilotSelected].pilotSprite;
         pilotSelectScreen.SetActive(false);
         confirmationScreen.SetActive(true);
     }
@@ -97,6 +99,9 @@ public class CharacterSelect : MonoBehaviour
     public void ReturnButton()
     {
         characterSelectScreen.SetActive(true);
+        shipSelectScreen.SetActive(true);
+        pilotSelectScreen.SetActive(false);
+        confirmationScreen.SetActive(false);
     }
 
     public void EnableDisableScreen(GameObject enable, GameObject disable)
@@ -136,6 +141,7 @@ public class CharacterSelect : MonoBehaviour
         {
             pilotName[i].text = pilots[i].pilotName;
             pilotDescription[i].text = pilots[i].pilotDescription;
+            pilotImage[i].sprite = pilots[i].pilotSprite;
         }
     }
 
