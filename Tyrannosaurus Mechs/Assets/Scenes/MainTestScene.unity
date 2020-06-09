@@ -191,17 +191,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AstroidOne
       objectReference: {fileID: 0}
-    - target: {fileID: 5342302641884368566, guid: 9129cfae591a50942b8912da00953b3e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2845cee6cf5557d49b5afd15c6444db4,
-        type: 3}
-    - target: {fileID: 5342302641884368566, guid: 9129cfae591a50942b8912da00953b3e,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5540578157462577183, guid: 9129cfae591a50942b8912da00953b3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -256,21 +245,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5540578157462577183, guid: 9129cfae591a50942b8912da00953b3e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.04269
-      objectReference: {fileID: 0}
-    - target: {fileID: 5540578157462577183, guid: 9129cfae591a50942b8912da00953b3e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.04269
-      objectReference: {fileID: 0}
-    - target: {fileID: 5540578157462577183, guid: 9129cfae591a50942b8912da00953b3e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4269
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9129cfae591a50942b8912da00953b3e, type: 3}
@@ -1259,17 +1233,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1619448305198674392, guid: a044bff37856cb143991413a94e2660f,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ff287d0c7507c8146938e1cb46055905,
-        type: 3}
-    - target: {fileID: 1619448305198674392, guid: a044bff37856cb143991413a94e2660f,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2383461635493478713, guid: a044bff37856cb143991413a94e2660f,
         type: 3}
