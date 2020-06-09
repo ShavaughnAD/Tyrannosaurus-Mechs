@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : Health
 {
     public int killScore;
+    public bool isBoss = false;
     public override void Awake()
     {
         base.Awake();
@@ -17,15 +19,27 @@ public class EnemyHealth : Health
         currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
         if(currentHealth == 0)
         {
-            GameManager.gameManager.score += killScore;
             Death();
         }
     }
 
     void Death()
     {
-        //Increase score here
-        Destroy(gameObject);
+        GameManager.gameManager.score += killScore;
+        if(isBoss == true)
+        {
+            gameObject.SetActive(false);
+            Invoke("LoadMenu", 2);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     //void Hurt(float param)
