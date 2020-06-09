@@ -9,9 +9,13 @@ public class PowerUp : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.tag == "Player" && transform.tag == "Speed")
         {
             StartCoroutine (PickUp (collision) );
+        }
+        if(collision.tag == "Player" && transform.tag == "Damage")
+        {
+           StartCoroutine( Pickup2(collision));
         }
     }
     IEnumerator PickUp(Collider2D player)
@@ -24,5 +28,14 @@ public class PowerUp : MonoBehaviour
         statts.moveSpeed /= multiplier;
         Destroy(gameObject);
     }
- 
+ IEnumerator Pickup2(Collider2D player)
+    {
+        PlayerMovement wepStat = player.GetComponent<PlayerMovement>();
+        wepStat.weaponDamage *= multiplier;
+        transform.GetComponent<SpriteRenderer>().enabled = false;
+        transform.GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(duration);
+        wepStat.weaponDamage /= multiplier;
+        Destroy(gameObject);
+    }
 }

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class BossFirePattern2 : MonoBehaviour
 {
+    public static BossFirePattern2 BFP2;
     private float angle = 0f;
     
-    void Start()
+     public void Start()
     {
-        InvokeRepeating("Fire", 0f, 0.1f);
+        BFP2 = this;
     }
 
-    private void Fire()
+    public void Fire()
     {
         float bulDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
         float bulDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
@@ -28,6 +29,10 @@ public class BossFirePattern2 : MonoBehaviour
         angle += 10f;
     }
     
+    public void Shoot()
+    {
+        InvokeRepeating("Fire", 0f, 0.1f);
+    }
     void Update()
     {
         

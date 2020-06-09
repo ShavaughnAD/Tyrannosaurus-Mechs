@@ -8,6 +8,7 @@ public class PlayerShip03Shoot : PlayerMovement
 
     public override void Update()
     {
+        base.Update();
         if (Input.GetMouseButtonDown(0))
         {
             LaunchProjectile();
