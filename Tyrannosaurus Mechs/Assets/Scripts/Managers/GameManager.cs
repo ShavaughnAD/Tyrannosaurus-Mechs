@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     {
         //Start All Necessary Functions to happen when game Begins Here
         //This includes Timer, CameraMovement, etc...
+        gameStarted = true;
         scoreText.enabled = true;
         textBox.enabled = true;
     }

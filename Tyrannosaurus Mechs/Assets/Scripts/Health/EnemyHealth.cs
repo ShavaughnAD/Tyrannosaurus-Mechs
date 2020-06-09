@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyHealth : Health
 {
@@ -10,7 +8,6 @@ public class EnemyHealth : Health
         base.Awake();
         //onHurt.BindToEvent(Hurt);
         //onDeath.BindToEvent(Death);
-        gameObject.layer = 10;
         ResetHealth();
     }
 

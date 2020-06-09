@@ -4,25 +4,27 @@ using System.Collections.Generic;
 
 public class CharacterSelect : MonoBehaviour
 {
-
     [System.Serializable]
-    public class Pilots
+    public class Pilots //Class Specifically to hold whats needed for the Pilots
     {
-        public string pilotName;
-        [TextArea] public string pilotDescription;
-        public int damageModifier;
-        public int speedModifier;
-        public float coolDownModifier;
-        public Sprite pilotSprite;
+        public string pilotName; //Display this to a Text
+        [TextArea] public string pilotDescription; //Text Area allows you to type longer strings & keep structure
+        public int damageModifier; //Will +/- these values when Applying Pilot Benefits
+        public int speedModifier; //Will +/- these values when Applying Pilot Benefits
+        public float coolDownModifier; //Will +/- these values when Applying Pilot Benefits
+        public Sprite pilotSprite; //Will display this on a Image
     }
 
-    public class Ships
+    [System.Serializable]
+    public class Ships //Class Specifically to hold data on whats needed for the Ships
     {
         //Will Comeback and make Ships a List so that it is easier to customize & work well with for Flexibility
     }
 
-    [Header("Ships Variables")]
-    public GameObject[] playerShip;
+    #region UI Variables
+
+    [Header("Ships Variables")] 
+    public GameObject[] playerShip; 
     public Text[] playerShipNames;
     public Text[] playerShipDescription;
     public Image[] playerShipImage;
@@ -41,8 +43,11 @@ public class CharacterSelect : MonoBehaviour
     public Image pilotChosen;
     public Image shipChosen;
 
+    #endregion
+
     public Transform playerStartPoint;
     public List<Pilots> pilots;
+    List<Ships> ships;
 
     int shipSelected = 0;
     int pilotSelected = 0;
@@ -56,6 +61,10 @@ public class CharacterSelect : MonoBehaviour
         pilotSelectScreen.SetActive(false);
         confirmationScreen.SetActive(false);
         shipSelectScreen.SetActive(true);
+        if(playerStartPoint == null)
+        {
+            Debug.LogError("PlayerStart is null, please add this in");
+        }
     }
 
     public void ChooseShip(int ship)
@@ -81,6 +90,7 @@ public class CharacterSelect : MonoBehaviour
         playerShipMovement = ship.GetComponent<PlayerMovement>();
         GameManager.gameManager.playerShipMovement = ship.GetComponent<PlayerMovement>();
         ApplyPilotBenefits();
+        GameManager.gameManager.lives = (int)ship.GetComponent<Health>().maxHealth;
         GameManager.gameManager.BeginGame();
     }
 
@@ -102,6 +112,8 @@ public class CharacterSelect : MonoBehaviour
         playerShipMovement.weaponDamage += pilots[pilotSelected].damageModifier;
     }
 
+    #region Display Information Functions
+
     public void DisplayShipInfo()
     {
         for(int i = 0; i < playerShip.Length; i++)
@@ -109,7 +121,10 @@ public class CharacterSelect : MonoBehaviour
             playerShipNames[i].text = playerShip[i].GetComponent<PlayerMovement>().shipName;
             playerShipDescription[i].text = "Lives: " + playerShip[i].GetComponent<Health>().maxHealth.ToString("F0") +
                 "\n" +
-                playerShip[i].GetComponent<PlayerMovement>().shipDescription;
+                playerShip[i].GetComponent<PlayerMovement>().shipDescription 
+                + "\n" +
+                "Ability: " + playerShip[i].GetComponent<PlayerMovement>().ability.ToString();
+
             playerShipImage[i].sprite = playerShip[i].GetComponent<SpriteRenderer>().sprite;
             playerShipImage[i].color = playerShip[i].GetComponent<SpriteRenderer>().color;
         }
@@ -123,4 +138,6 @@ public class CharacterSelect : MonoBehaviour
             pilotDescription[i].text = pilots[i].pilotDescription;
         }
     }
+
+    #endregion
 }
