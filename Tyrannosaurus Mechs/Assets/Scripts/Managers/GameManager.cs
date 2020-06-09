@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
     public float timer;
-    public Text textBox;
+    public Text timerText;
     public Text scoreText;
+
+    public Text livesText;
 
     public int score;
     public int scoreNeeded;
@@ -20,8 +23,8 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         gameManager = this;
-        textBox.text = timer.ToString();
-        textBox.enabled = false;
+        timerText.text = timer.ToString();
+        timerText.enabled = false;
         scoreText.text = score.ToString();
         scoreText.enabled = false;
         scoreNeeded = 500;
@@ -52,8 +55,9 @@ public class GameManager : MonoBehaviour
             timer += 1 * Time.deltaTime;
         }
 
+        livesText.text = lives.ToString();
         scoreText.text = "Score: " + score.ToString();
-        textBox.text = "Time: " + Mathf.Round(timer).ToString();
+        timerText.text = "Time: " + Mathf.Round(timer).ToString();
     }
 
     public void AddExtraHealth()
@@ -68,7 +72,7 @@ public class GameManager : MonoBehaviour
         //This includes Timer, CameraMovement, etc...
         gameStarted = true;
         scoreText.enabled = true;
-        textBox.enabled = true;
+        timerText.enabled = true;
     }
 
     public void LevelCompleted()
@@ -80,7 +84,7 @@ public class GameManager : MonoBehaviour
     {
         if (lives <= 0)
         {
-            Debug.Log("Game Over");
+            SceneManager.LoadScene(0);
         }
         else
         {
