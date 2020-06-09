@@ -3044,10 +3044,25 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3648637313727846753, guid: 719a421be13d5e84b924083cc23387d3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6024412243346012737, guid: 719a421be13d5e84b924083cc23387d3,
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043673089863332017, guid: 719a421be13d5e84b924083cc23387d3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339435767012047076, guid: 719a421be13d5e84b924083cc23387d3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8208152553959106819, guid: 719a421be13d5e84b924083cc23387d3,
         type: 3}
@@ -3418,6 +3433,11 @@ PrefabInstance:
     - target: {fileID: 464507772193569706, guid: ee1c5e5588ceb1245876500d5ed465cd,
         type: 3}
       propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202807913798413705, guid: ee1c5e5588ceb1245876500d5ed465cd,
+        type: 3}
+      propertyPath: ability
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
