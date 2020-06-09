@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - PowerUp
   - Projectile
+  - Speed
+  - Damage
   layers:
   - Default
   - TransparentFX
@@ -41,6 +43,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1830058997
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PlayersAndEnemies
+    uniqueID: 844512809
     locked: 0
