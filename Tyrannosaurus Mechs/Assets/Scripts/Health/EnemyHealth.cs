@@ -17,6 +17,7 @@ public class EnemyHealth : Health
         currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
         if(currentHealth == 0)
         {
+            GameManager.gameManager.score += killScore;
             Death();
         }
     }

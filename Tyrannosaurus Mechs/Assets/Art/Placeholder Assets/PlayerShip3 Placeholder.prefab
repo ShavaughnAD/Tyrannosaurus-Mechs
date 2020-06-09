@@ -485,7 +485,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6724235089295167489
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -524,12 +524,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5262236db43665e439eaef6b591fc426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ability: 0
   playerRB: {fileID: 0}
   moveSpeed: 5
   idleSpeed: 1
   coolDownTimer: 10
   weaponDamage: 10
+  abilityActiveTime: 2
   shield: {fileID: 0}
+  chomp: {fileID: 0}
   shipName: Yellow Yardbird
   shipDescription: Close Ranged
   firePoints:

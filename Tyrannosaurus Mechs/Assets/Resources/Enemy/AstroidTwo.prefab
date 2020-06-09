@@ -80,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 19.03, y: 20.34}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3335090276057397202
@@ -98,7 +98,7 @@ MonoBehaviour:
   maxHealth: 60
   currentHealth: 0
   damageTaken: 0
-  killScore: 0
+  killScore: 100
 --- !u!58 &2154680858978032738
 CircleCollider2D:
   m_ObjectHideFlags: 0

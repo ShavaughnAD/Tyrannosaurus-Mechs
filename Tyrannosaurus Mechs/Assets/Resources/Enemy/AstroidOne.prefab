@@ -80,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 19.03, y: 20.34}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &4772164166969355850
@@ -114,4 +114,4 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageTaken: 0
-  killScore: 0
+  killScore: 50

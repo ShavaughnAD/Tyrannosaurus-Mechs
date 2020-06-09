@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
         gameStarted = true;
         scoreText.enabled = true;
         timerText.enabled = true;
+        BossFirePattern2.BFP2.Shoot();
     }
 
     public void LevelCompleted()

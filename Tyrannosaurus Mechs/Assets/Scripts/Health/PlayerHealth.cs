@@ -36,6 +36,13 @@ public class PlayerHealth : Health
     {
         GameManager.gameManager.GameOver();
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag== "Enemy")
+        {
+            GameManager.gameManager.GameOver();
+        }
+    }
 
     void Death(float param)
     {

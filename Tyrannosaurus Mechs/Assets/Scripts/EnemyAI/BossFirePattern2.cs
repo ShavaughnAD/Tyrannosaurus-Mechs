@@ -28,7 +28,14 @@ public class BossFirePattern2 : MonoBehaviour
 
         angle += 10f;
     }
-    
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.tag == "Player")
+    //    {
+    //        Shoot();
+    //    }
+    //}
+
     public void Shoot()
     {
         InvokeRepeating("Fire", 0f, 0.1f);
