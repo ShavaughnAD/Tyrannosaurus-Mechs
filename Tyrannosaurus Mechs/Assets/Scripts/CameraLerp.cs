@@ -9,9 +9,8 @@ public class CameraLerp : MonoBehaviour
 
     public float speed = 1.0f;
 
-    private float startTime;
-
-    private float journeyLength;
+    float startTime;
+    float journeyLength;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +23,13 @@ public class CameraLerp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float disCovered = (Time.time - startTime) * speed;
+        if (GameManager.gameManager.gameStarted)
+        {
+            float disCovered = (Time.time - startTime) * speed;
 
-        float fractionOfJourney = disCovered / journeyLength;
+            float fractionOfJourney = disCovered / journeyLength;
 
-        transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fractionOfJourney);
+            transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fractionOfJourney);
+        }
     }
 }
