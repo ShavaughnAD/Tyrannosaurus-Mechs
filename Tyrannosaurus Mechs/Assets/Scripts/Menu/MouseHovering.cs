@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class MouseHovering : MonoBehaviour
 {
     public AudioClip myButtonClick;
+    public AudioClip pointerDown;
 
     public AudioSource AudioSrc;
 
@@ -27,5 +28,10 @@ public class MouseHovering : MonoBehaviour
     public void HoverPressed()
     {
         //_Open.SetActive(false);
+    }
+
+    public void ButtonDown()
+    {
+        AudioSrc.PlayOneShot(pointerDown);
     }
 }

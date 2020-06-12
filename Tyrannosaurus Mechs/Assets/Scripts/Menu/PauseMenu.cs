@@ -15,6 +15,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject charSelect;
 
+    private string currScene;
+
     void Start()
     {
         pauseMenuUI = GameObject.Find("PausePanel");
@@ -22,6 +24,7 @@ public class PauseMenu : MonoBehaviour
         audSrc = GetComponent<AudioSource>();
         pauseMenuUI.SetActive(false);
         charSelect = GameObject.Find("MainCanvas");
+        currScene = SceneManager.GetActiveScene().name;
     }
 
     void Update()
@@ -38,14 +41,14 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if (charSelect.activeInHierarchy == false)
-        {
-            Cursor.visible = false;
-        }
-        else if (charSelect.activeInHierarchy == true)
-        {
-            Cursor.visible = true;
-        }
+        //if (charSelect.activeInHierarchy == false)
+        //{
+        //    Cursor.visible = false;
+        //}
+        //else if (charSelect.activeInHierarchy == true)
+        //{
+        //    Cursor.visible = true;
+        //}
 
     }
 

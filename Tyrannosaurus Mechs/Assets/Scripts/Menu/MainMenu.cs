@@ -1,13 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public string currentScene;
+    public GameObject winScreen;
+    public GameObject loseScreen;
+
     void Start()
     {
-        Cursor.visible = true;
+        currentScene = SceneManager.GetActiveScene().name;
+        winScreen = GameObject.Find("WinScreen");
+        loseScreen = GameObject.Find("LoseScreen");
+
+        //winScreen.SetActive(false);
+        //loseScreen.SetActive(false);
     }
 
     public void PlayGame()
@@ -25,8 +35,8 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Player has quit the game");
     }
 
-    public void ToTutorial()
+    public void ToMainMenu()
     {
-        //SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("MainMenu");
     }
 }
