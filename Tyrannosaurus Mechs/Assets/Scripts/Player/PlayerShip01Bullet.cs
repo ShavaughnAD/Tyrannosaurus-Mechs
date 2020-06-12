@@ -5,6 +5,7 @@ public class PlayerShip01Bullet : MonoBehaviour
     public float damage;
     public float speed;
 
+    public GameObject Explosion;
 
     void Awake()
     {
@@ -31,9 +32,18 @@ public class PlayerShip01Bullet : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
+            PlayExplosion();
+
             Debug.LogError(collision.name + " Recieved " + GameManager.gameManager.playerShipMovement.weaponDamage + "  Damage");
             collision.GetComponent<Health>().TakeDamage(GameManager.gameManager.playerShipMovement.weaponDamage);
             Destroy(gameObject);
         }
+    }
+
+    void PlayExplosion()
+    {
+        GameObject explosion = (GameObject)Instantiate(Explosion);
+
+        explosion.transform.position = transform.position;
     }
 }
