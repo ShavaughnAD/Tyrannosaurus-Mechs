@@ -158,7 +158,7 @@ MonoBehaviour:
   currentHealth: 0
   damageTaken: 0
   killScore: 100
-  isBoss: 1
+  isBoss: 0
   BFP2: {fileID: 0}
   BFPDS: {fileID: 0}
   BFB: {fileID: 0}

@@ -11,11 +11,15 @@ public class PowerUp : MonoBehaviour
     {
         if(collision.tag == "Player" && transform.tag == "Speed")
         {
-            StartCoroutine (PickUp (collision) );
+           StartCoroutine (PickUp (collision) );
         }
         if(collision.tag == "Player" && transform.tag == "Damage")
         {
-           StartCoroutine( Pickup2(collision));
+           StartCoroutine (Pickup2 (collision));
+        }
+        if(collision.tag == "Player" && transform.tag == "Nuke")
+        {
+           PickUp3();
         }
     }
     IEnumerator PickUp(Collider2D player)
@@ -28,7 +32,7 @@ public class PowerUp : MonoBehaviour
         statts.moveSpeed /= multiplier;
         Destroy(gameObject);
     }
- IEnumerator Pickup2(Collider2D player)
+    IEnumerator Pickup2(Collider2D player)
     {
         PlayerMovement wepStat = player.GetComponent<PlayerMovement>();
         wepStat.weaponDamage *= multiplier;
@@ -37,5 +41,24 @@ public class PowerUp : MonoBehaviour
         yield return new WaitForSeconds(duration);
         wepStat.weaponDamage /= multiplier;
         Destroy(gameObject);
+    }
+    void PickUp3()
+    {
+        transform.GetComponent<SpriteRenderer>().enabled = false;
+        transform.GetComponent<Collider2D>().enabled = false;
+        Explode();
+        Destroy(gameObject);  
+    }
+    void Explode()
+    {
+        Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(transform.position, 5f);
+        foreach(Collider2D enemys in collider2Ds)
+        {
+            EnemyHealth enemy = enemys.GetComponent<EnemyHealth>();
+            if(enemy!= null)
+            {
+                enemy.TakeDamage(350);
+            }
+        }
     }
 }

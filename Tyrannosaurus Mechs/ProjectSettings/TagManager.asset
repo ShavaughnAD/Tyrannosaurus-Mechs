@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Speed
   - Damage
+  - Nuke
   layers:
   - Default
   - TransparentFX

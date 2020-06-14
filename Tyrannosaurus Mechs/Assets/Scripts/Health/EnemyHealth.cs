@@ -8,17 +8,20 @@ public class EnemyHealth : Health
     public BossFirePattern2 BFP2;
     public BossFireDoubleSpiral BFPDS;
     public BossFireBullets BFB;
+    public Dropitem dropItem;
     public override void Awake()
     {
         base.Awake();
         //onHurt.BindToEvent(Hurt);
         //onDeath.BindToEvent(Death);
         ResetHealth();
+        dropItem = GetComponent<Dropitem>();
         if (isBoss == true)
         {
             BFB = GetComponent<BossFireBullets>();
             BFP2 = GetComponent<BossFirePattern2>();
             BFPDS = GetComponent<BossFireDoubleSpiral>();
+            dropItem.enabled = true;
         }
     }
 
@@ -28,6 +31,7 @@ public class EnemyHealth : Health
         currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
         if(currentHealth == 0)
         {
+            dropItem.LootDrop();
             Death();
         }
     }
@@ -39,10 +43,11 @@ public class EnemyHealth : Health
         if(isBoss == true)
         {
             gameObject.SetActive(false);
+            Invoke("LoadMenu", .5f);
             BFB.enabled = false;
             BFP2.enabled = false;
             BFPDS.enabled = false;
-            Invoke("LoadMenu", 2);
+            Destroy(gameObject);
         }
         else
         {
