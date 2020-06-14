@@ -6,8 +6,7 @@ public class Health : MonoBehaviour
     public float currentHealth = 0;
     public float damageTaken = 0;
 
-    bool invulnerable = false;
-    public bool immune { get => invulnerable; set => invulnerable = value; }
+    public bool immune;
 
     public HealthDelegate onHurt = new HealthDelegate();
     public HealthDelegate onDeath = new HealthDelegate();
@@ -20,8 +19,23 @@ public class Health : MonoBehaviour
 
     public virtual void TakeDamage(float damageAmount)
     {
-        if (immune) return;
-        onHurt.CallEvent(0);
+        if (immune)
+        {
+            Debug.LogError("Immune");
+            return;
+        }
+        else
+        {
+            if(gameObject.tag == "Player")
+            {
+                GameManager.gameManager.GameOver();
+            }
+            else
+            {
+                onHurt.CallEvent(0);
+            }
+        }
+
         //if (currentHealth <= 0) return;
         //currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
         //if (currentHealth == 0)

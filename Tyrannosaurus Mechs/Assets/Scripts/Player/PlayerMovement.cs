@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Ability ability;
     public Rigidbody2D playerRB;
     public float moveSpeed = 5;
-    public float idleSpeed = 1;
+    float idleSpeed = 1;
 
     public float coolDownTimer = 10;
     public float weaponDamage = 10;
@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject shield;
     public GameObject chomp;
+
+    public Animator chompAnim;
 
     public string shipName;
     [TextArea]
@@ -57,6 +59,10 @@ public class PlayerMovement : MonoBehaviour
         if(chomp != null)
         {
             chomp.SetActive(false);
+            if(chompAnim == null)
+            {
+                chompAnim = GetComponentInChildren<Animator>();
+            }
         }
     }
 
@@ -125,8 +131,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void AbilityUsage()
     {
-        skillReady = false;
-        cooldown = 0;
         switch (ability)
         {
             case Ability.Shield:
@@ -134,18 +138,23 @@ public class PlayerMovement : MonoBehaviour
                 shield.SetActive(true);
                 playerHealth.immune = true;
                 Invoke("StopAbility", abilityActiveTime);
+                skillReady = false;
+                cooldown = 0;
                 break;
 
             case Ability.Speedy:
                 speedyAbility = true;
                 moveSpeed += 3;
                 Invoke("StopAbility", abilityActiveTime);
+                skillReady = false;
+                cooldown = 0;
                 break;
 
             case Ability.Chomp:
                 chompAbility = true;
                 chomp.SetActive(true);
                 playerHealth.immune = true;
+                chompAnim.SetBool("Crunch", true);
                 Invoke("StopAbility", abilityActiveTime);
                 break;
 
@@ -164,7 +173,9 @@ public class PlayerMovement : MonoBehaviour
         }
         if (chompAbility)
         {
-            if(chomp != null)
+            skillReady = false;
+            cooldown = 0;
+            if (chomp != null)
             {
                 chomp.SetActive(false);
             }

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public int lives;
 
     public GameObject player;
+    public GameObject gameWonScreen;
+    public GameObject gameOverScreen;
     public PlayerMovement playerShipMovement;
 
     public bool gameStarted = false;
@@ -27,7 +29,6 @@ public class GameManager : MonoBehaviour
         timerText.enabled = false;
         scoreText.text = score.ToString();
         scoreText.enabled = false;
-        scoreNeeded = 500;
     }
 
     void Start()
@@ -36,10 +37,28 @@ public class GameManager : MonoBehaviour
         {
             playerShipMovement = FindObjectOfType<PlayerMovement>();
         }
+        if(gameWonScreen == null)
+        {
+            gameWonScreen = GameObject.FindGameObjectWithTag("WinScreen");
+            gameWonScreen.SetActive(false);
+        }
+        if(gameOverScreen == null)
+        {
+            gameOverScreen = GameObject.FindGameObjectWithTag("LoseScreen");
+            gameOverScreen.SetActive(false);
+        }
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            gameWonScreen.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            gameOverScreen.SetActive(true);
+        }
         if (Input.GetKey(KeyCode.P))
         {
             score++;
@@ -81,17 +100,21 @@ public class GameManager : MonoBehaviour
         CheckHighScore();
     }
 
+    public void GameWon()
+    {
+        gameWonScreen.SetActive(true);
+    }
+
     public void GameOver()
     {
         if (lives <= 0)
         {
-            SceneManager.LoadScene(0);
+            gameOverScreen.SetActive(true);
         }
         else
         {
             lives--;
         }
-        //Bring up Game Over Screen Here
     }
 
     public void CheckHighScore()

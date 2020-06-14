@@ -10,6 +10,9 @@ TagManager:
   - Speed
   - Damage
   - Nuke
+  - Manager
+  - WinScreen
+  - LoseScreen
   layers:
   - Default
   - TransparentFX

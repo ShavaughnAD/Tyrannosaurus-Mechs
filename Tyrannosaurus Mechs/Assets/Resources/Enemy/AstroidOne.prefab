@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4772164166969355850}
   - component: {fileID: 4004608955561339933}
   - component: {fileID: 3488090979959968008}
+  - component: {fileID: 3685495643132420441}
   m_Layer: 0
   m_Name: AstroidOne
   m_TagString: Enemy
@@ -115,6 +116,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageTaken: 0
+  immune: 0
   killScore: 50
   isBoss: 0
   BFP2: {fileID: 0}
@@ -144,3 +146,16 @@ MonoBehaviour:
     item: {fileID: 6746918500233413860, guid: aa646a9398804674e9251d9575b79331, type: 3}
     dropRarity: 1
   dropChance: 25
+--- !u!114 &3685495643132420441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732166920188325719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55eb2cbad906ef4eb5beb4d2631d645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
