@@ -5,10 +5,16 @@ public class EnemyHealth : Health
 {
     public int killScore;
     public bool isBoss = false;
-    public BossFirePattern2 BFP2;
-    public BossFireDoubleSpiral BFPDS;
-    public BossFireBullets BFB;
+    [HideInInspector] public BossFirePattern2 BFP2;
+    [HideInInspector] public BossFireDoubleSpiral BFPDS;
+    [HideInInspector] public BossFireBullets BFB;
     public Dropitem dropItem;
+
+    [Range(0.1f, 0.5f)]
+    public float blinkEffectTime = 0.5f; //The lower this value, the faster the blink
+    Material matBlink;
+    Material matDefault;
+    SpriteRenderer spriteRend;
     public override void Awake()
     {
         base.Awake();
@@ -25,14 +31,26 @@ public class EnemyHealth : Health
         }
     }
 
+    void Start()
+    {
+        spriteRend = GetComponent<SpriteRenderer>();
+        matBlink = Resources.Load("Effects/Blink", typeof(Material)) as Material;
+        matDefault = spriteRend.material;
+    }
+
     public override void TakeDamage(float damageAmount)
     {
         base.TakeDamage(damageAmount);
         currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
+        spriteRend.material = matBlink;
         if(currentHealth == 0)
         {
             dropItem.LootDrop();
             Death();
+        }
+        else
+        {
+            Invoke("ResetMaterial", blinkEffectTime);
         }
     }
 
@@ -60,14 +78,8 @@ public class EnemyHealth : Health
         SceneManager.LoadScene(0);
     }
 
-    //void Hurt(float param)
-    //{
-
-    //}
-
-    //void Death(float param)
-    //{
-    //    //ScoreSystem.Instance.AddScore(killScore);
-    //    Destroy(gameObject);
-    //}
+    void ResetMaterial()
+    {
+        spriteRend.material = matDefault;
+    }
 }
