@@ -435,6 +435,8 @@ MonoBehaviour:
   scoreNeeded: 0
   lives: 0
   player: {fileID: 0}
+  gameWonScreen: {fileID: 0}
+  gameOverScreen: {fileID: 0}
   playerShipMovement: {fileID: 0}
   gameStarted: 0
 --- !u!1 &193396346

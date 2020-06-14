@@ -18,6 +18,9 @@ public class CharacterSelect : MonoBehaviour
     [System.Serializable]
     public class Ships //Class Specifically to hold data on whats needed for the Ships
     {
+        public string shipName; //Display this to a Text
+        [TextArea] public string shipDescription;
+        public float moveSpeed;
         //Will Comeback and make Ships a List so that it is easier to customize & work well with for Flexibility
     }
 

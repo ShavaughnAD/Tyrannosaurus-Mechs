@@ -9,7 +9,6 @@ public class PlayerHealth : Health
     public override void Awake()
     {
         base.Awake();
-        onHurt.BindToEvent(Hurt);
         onDeath.BindToEvent(Death);
     }
 
@@ -32,17 +31,6 @@ public class PlayerHealth : Health
         respawnPoint = transform.position;
     }
 
-    void Hurt(float param)
-    {
-        GameManager.gameManager.GameOver();
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag== "Enemy")
-        {
-            GameManager.gameManager.GameOver();
-        }
-    }
 
     void Death(float param)
     {
