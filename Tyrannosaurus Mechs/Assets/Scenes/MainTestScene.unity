@@ -432,7 +432,7 @@ MonoBehaviour:
   scoreText: {fileID: 1011815714}
   livesText: {fileID: 201031214}
   score: 0
-  scoreNeeded: 0
+  scoreNeeded: 500
   lives: 0
   player: {fileID: 0}
   gameWonScreen: {fileID: 0}
@@ -2726,7 +2726,12 @@ PrefabInstance:
     - target: {fileID: 2970035062770483251, guid: 719a421be13d5e84b924083cc23387d3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970035062770483251, guid: 719a421be13d5e84b924083cc23387d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: LoseScreen
       objectReference: {fileID: 0}
     - target: {fileID: 3279677753557425928, guid: 719a421be13d5e84b924083cc23387d3,
         type: 3}
@@ -2736,7 +2741,12 @@ PrefabInstance:
     - target: {fileID: 3600781012902990630, guid: 719a421be13d5e84b924083cc23387d3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600781012902990630, guid: 719a421be13d5e84b924083cc23387d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: WinScreen
       objectReference: {fileID: 0}
     - target: {fileID: 3648637313727846753, guid: 719a421be13d5e84b924083cc23387d3,
         type: 3}
