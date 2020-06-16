@@ -6,7 +6,7 @@ public class ChompAbility : MonoBehaviour
     public float actualDamage;
     public Animator chompAnim;
 
-
+    #region Initialzation Protocals
 
     void Start()
     {
@@ -17,6 +17,9 @@ public class ChompAbility : MonoBehaviour
     {
         actualDamage = damage;
     }
+
+    #endregion
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Enemy")
