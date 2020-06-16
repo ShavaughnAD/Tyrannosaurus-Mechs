@@ -18,9 +18,10 @@ public class CharacterSelect : MonoBehaviour
     [System.Serializable]
     public class Ships //Class Specifically to hold data on whats needed for the Ships
     {
+        public GameObject shipObj;
         public string shipName; //Display this to a Text
         [TextArea] public string shipDescription;
-        public float moveSpeed;
+        public Sprite shipSprite;
         //Will Comeback and make Ships a List so that it is easier to customize & work well with for Flexibility
     }
 
@@ -51,7 +52,7 @@ public class CharacterSelect : MonoBehaviour
 
     public Transform playerStartPoint;
     public List<Pilots> pilots;
-    List<Ships> ships;
+    public List<Ships> ships;
 
     int shipSelected = 0;
     int pilotSelected = 0;
@@ -76,8 +77,10 @@ public class CharacterSelect : MonoBehaviour
         shipSelected = ship;
         shipSelectScreen.SetActive(false);
         pilotSelectScreen.SetActive(true);
-        shipChosen.sprite = playerShip[shipSelected].GetComponent<SpriteRenderer>().sprite;
-        shipChosen.color = playerShip[shipSelected].GetComponent<SpriteRenderer>().color;
+        //shipChosen.sprite = playerShip[shipSelected].GetComponent<SpriteRenderer>().sprite;
+        shipChosen.sprite = ships[shipSelected].shipSprite;
+        shipChosen.color = ships[shipSelected].shipObj.GetComponent<SpriteRenderer>().color;
+        //shipChosen.color = playerShip[shipSelected].GetComponent<SpriteRenderer>().color;
     }
 
     public void ChoosePilot(int pilot)
@@ -91,9 +94,14 @@ public class CharacterSelect : MonoBehaviour
     public void ConfirmButton()
     {
         characterSelectScreen.SetActive(false);
-        GameObject ship= Instantiate(playerShip[shipSelected], playerStartPoint.position, Quaternion.identity);
+        //GameObject ship= Instantiate(playerShip[shipSelected], playerStartPoint.position, Quaternion.identity);
+        //playerShipMovement = ship.GetComponent<PlayerMovement>();
+        //GameManager.gameManager.playerShipMovement = ship.GetComponent<PlayerMovement>();
+
+        GameObject ship = Instantiate(ships[shipSelected].shipObj, playerStartPoint.position, Quaternion.identity);
         playerShipMovement = ship.GetComponent<PlayerMovement>();
-        GameManager.gameManager.playerShipMovement = ship.GetComponent<PlayerMovement>();
+        GameManager.gameManager.playerShipMovement = playerShipMovement;
+
         ApplyPilotBenefits();
         GameManager.gameManager.lives = (int)ship.GetComponent<Health>().maxHealth;
         GameManager.gameManager.BeginGame();
@@ -124,17 +132,31 @@ public class CharacterSelect : MonoBehaviour
 
     public void DisplayShipInfo()
     {
-        for(int i = 0; i < playerShip.Length; i++)
-        {
-            playerShipNames[i].text = playerShip[i].GetComponent<PlayerMovement>().shipName;
-            playerShipDescription[i].text = "Lives: " + playerShip[i].GetComponent<Health>().maxHealth.ToString("F0") +
-                "\n" +
-                playerShip[i].GetComponent<PlayerMovement>().shipDescription 
-                + "\n" +
-                "Ability: " + playerShip[i].GetComponent<PlayerMovement>().ability.ToString();
+        //for(int i = 0; i < playerShip.Length; i++)
+        //{
+        //    playerShipNames[i].text = playerShip[i].GetComponent<PlayerMovement>().shipName;
+        //    playerShipDescription[i].text = "Lives: " + playerShip[i].GetComponent<Health>().maxHealth.ToString("F0") +
+        //        "\n" +
+        //        playerShip[i].GetComponent<PlayerMovement>().shipDescription 
+        //        + "\n" +
+        //        "Ability: " + playerShip[i].GetComponent<PlayerMovement>().ability.ToString();
 
-            playerShipImage[i].sprite = playerShip[i].GetComponent<SpriteRenderer>().sprite;
-            playerShipImage[i].color = playerShip[i].GetComponent<SpriteRenderer>().color;
+        //    playerShipImage[i].sprite = playerShip[i].GetComponent<SpriteRenderer>().sprite;
+        //    playerShipImage[i].color = playerShip[i].GetComponent<SpriteRenderer>().color;
+
+
+        //}
+
+        for(int i = 0; i < ships.Count; i++)
+        {
+            playerShipNames[i].text = ships[i].shipName;
+
+            playerShipDescription[i].text = "Lives: " + ships[i].shipObj.GetComponent<Health>().maxHealth.ToString("F0") +
+                "\n" +
+                ships[i].shipDescription + "\n" + "Ability: " + ships[i].shipObj.GetComponent<PlayerMovement>().ability.ToString();
+
+            playerShipImage[i].sprite = ships[i].shipSprite;
+            playerShipImage[i].color = ships[i].shipObj.GetComponent<SpriteRenderer>().color;
         }
     }
 

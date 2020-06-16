@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject shield;
     public GameObject chomp;
 
+    public ParticleSystem muzzleFlash;
+
     public Animator chompAnim;
 
     public string shipName;
