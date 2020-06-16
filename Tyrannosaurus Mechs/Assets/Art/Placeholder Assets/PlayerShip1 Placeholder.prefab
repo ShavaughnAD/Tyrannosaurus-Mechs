@@ -224,12 +224,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f73084fb753ba9e479701a1bb73eb3c8, type: 3}
-  m_Color: {r: 1, g: 0.6367924, b: 0.6367924, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 09f6654b84e03d842b42e3942158b018, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5714286, y: 1}
+  m_Size: {x: 4, y: 7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -269,18 +269,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0014134943, y: 0.05899936}
+  m_Offset: {x: 0.0014134645, y: 0.04340142}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5714286, y: 1}
-    newSize: {x: 0.5714286, y: 1}
+    oldSize: {x: 0.8888889, y: 1.5555556}
+    newSize: {x: 4, y: 7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.30708212, y: 0.80416036}
+  m_Size: {x: 0.57538056, y: 1.351924}
   m_EdgeRadius: 0
 --- !u!114 &1427766730031797143
 MonoBehaviour:
@@ -306,7 +306,7 @@ MonoBehaviour:
   chompAnim: {fileID: 1580795273437000436}
   shipName: Red Rocket
   shipDescription: Shoots Straight Up
-  PlayerShip01Bullet: {fileID: 1939245619601230, guid: d2f2f92c494bd1c41970791d8041c000,
+  PlayerShip01Bullet: {fileID: 6134037332248580840, guid: 9d6549fcc21d69b4dba5ed7fe677e6cf,
     type: 3}
   bulletPosition01: {fileID: 152239284}
   bulletPosition02: {fileID: 1690505194}
@@ -801,7 +801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3596378873547149210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.041, y: 0.69, z: 0}
+  m_LocalPosition: {x: 0.041, y: 1.121, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7956752464586387031}
@@ -1009,7 +1009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6361792692308825683}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.02, y: 0.315, z: -1.6481934}
+  m_LocalPosition: {x: 0.02, y: 1.092, z: -1.648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4193583667243190}
@@ -1205,7 +1205,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
