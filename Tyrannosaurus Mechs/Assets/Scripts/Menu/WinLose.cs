@@ -28,13 +28,13 @@ public class WinLose : MonoBehaviour
     {
         if (winScreen.activeInHierarchy == true)
         {
-            audSrc.PlayOneShot(_winClip);
+            audSrc.PlayOneShot(_winClip, 2f);
             _MusicPlayer.SetActive(false);
         }
 
         if(loseScreen.activeInHierarchy == true)
         {
-            audSrc.PlayOneShot(_loseClip);
+            audSrc.PlayOneShot(_loseClip, 2f);
             _MusicPlayer.SetActive(false);
         }
 
