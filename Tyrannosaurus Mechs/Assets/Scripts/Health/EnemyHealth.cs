@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EnemyHealth : Health
 {
@@ -10,11 +9,16 @@ public class EnemyHealth : Health
     [HideInInspector] public BossFireBullets BFB;
     public Dropitem dropItem;
 
+    #region Blinking Effect Variables
+
     [Range(0.1f, 0.5f)]
     public float blinkEffectTime = 0.5f; //The lower this value, the faster the blink
     Material matBlink;
     Material matDefault;
     SpriteRenderer spriteRend;
+
+    #endregion
+
     public override void Awake()
     {
         base.Awake();
@@ -71,11 +75,6 @@ public class EnemyHealth : Health
         {
             Destroy(gameObject);
         }
-    }
-
-    public void LoadMenu()
-    {
-        SceneManager.LoadScene(0);
     }
 
     void ResetMaterial()

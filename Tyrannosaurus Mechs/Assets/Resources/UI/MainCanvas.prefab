@@ -205,7 +205,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Choose
 --- !u!1 &1048737987
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Choose
 --- !u!1 &1353703696
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +717,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Choose
 --- !u!1 &1790176048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,7 +2041,7 @@ MonoBehaviour:
   shipChosen: {fileID: 9004631543215814379}
   playerStartPoint: {fileID: 0}
   pilots:
-  - pilotName: Rexxxxx
+  - pilotName: Crazy Chris
     pilotDescription: 'Increases Speed by 3
 
       Decreases Damage by 2
@@ -2060,8 +2060,8 @@ MonoBehaviour:
     speedModifier: 0
     coolDownModifier: 0
     pilotSprite: {fileID: 21300000, guid: 283f19631c8c5904bba795b439bfb37f, type: 3}
-  - pilotName: Young Strong Jaw
-    pilotDescription: 'Decrease Speed by 2
+  - pilotName: Angry Andy
+    pilotDescription: 'Decrease Speed by 3
 
       Increases Damage by 3
 
@@ -2073,19 +2073,19 @@ MonoBehaviour:
     pilotSprite: {fileID: 21300000, guid: 969cc3baeae812f4ebd3d4d287e805ab, type: 3}
   ships:
   - shipObj: {fileID: 1512782934554904, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
-    shipName: Red
+    shipName: Rex
     shipDescription: Shoots Lazers Forward
-    shipSprite: {fileID: 21300000, guid: 1edf3acace9da8643af0f0216b0d1f34, type: 3}
+    shipSprite: {fileID: 21300000, guid: 6975c5168b143e0438c383aca80a3c99, type: 3}
   - shipObj: {fileID: 325264543542691372, guid: ee1c5e5588ceb1245876500d5ed465cd,
       type: 3}
-    shipName: Green
+    shipName: Brachy
     shipDescription: Point & Click Shooting
-    shipSprite: {fileID: 21300000, guid: 969cc3baeae812f4ebd3d4d287e805ab, type: 3}
+    shipSprite: {fileID: 21300000, guid: e2ed75003e450a346a84f7f6fe1eb4a7, type: 3}
   - shipObj: {fileID: 6725026469722094428, guid: 3748a74d76a79a140bdeef5cf8679810,
       type: 3}
-    shipName: Yellow
+    shipName: Tri
     shipDescription: Shotgun Shooter
-    shipSprite: {fileID: 21300000, guid: 283f19631c8c5904bba795b439bfb37f, type: 3}
+    shipSprite: {fileID: 21300000, guid: 8428343b59e4e834899e99b2695b1305, type: 3}
 --- !u!114 &1347311870327520304
 MonoBehaviour:
   m_ObjectHideFlags: 0
