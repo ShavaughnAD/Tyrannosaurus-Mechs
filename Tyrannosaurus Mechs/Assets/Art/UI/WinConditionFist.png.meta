@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 7ff474fc74bc23b46979803839546913
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3188021193328003020
+    second: WinConditionFist_0
+  - first:
+      213: -708912662765972881
+    second: WinConditionFist_1
+  - first:
+      213: -1455917760747848486
+    second: WinConditionFist_2
+  - first:
+      213: -6131399723758325891
+    second: WinConditionFist_3
+  - first:
+      213: -5483400245597574398
+    second: WinConditionFist_4
+  - first:
+      213: -4165709854139832395
+    second: WinConditionFist_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -84,11 +102,137 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: WinConditionFist_0
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 1259
+        width: 871
+        height: 874
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43874439d9fd1c3d0800000000000000
+      internalID: -3188021193328003020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinConditionFist_1
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 1259
+        width: 871
+        height: 874
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62de0f60bf6926f0800000000000000
+      internalID: -708912662765972881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinConditionFist_2
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 758
+        width: 457
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc3178a28a8bcbe0800000000000000
+      internalID: -1455917760747848486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinConditionFist_3
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 758
+        width: 457
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fe471df64e8eaa0800000000000000
+      internalID: -6131399723758325891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinConditionFist_4
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 109
+        width: 563
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bedd7678c07e3b0800000000000000
+      internalID: -5483400245597574398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinConditionFist_5
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 132
+        width: 580
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7a6a265fc6036c0800000000000000
+      internalID: -4165709854139832395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: fdb9790b110680144a43bf2045653629
     internalID: 0
     vertices: []
     indices: 
