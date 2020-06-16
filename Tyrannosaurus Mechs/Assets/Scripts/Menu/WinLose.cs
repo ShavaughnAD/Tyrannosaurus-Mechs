@@ -37,5 +37,17 @@ public class WinLose : MonoBehaviour
             audSrc.PlayOneShot(_loseClip);
             _MusicPlayer.SetActive(false);
         }
+
+        if(Input.GetKeyDown(KeyCode.Keypad8))
+        {
+            winScreen.SetActive(true);
+            Time.timeScale = 1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            loseScreen.SetActive(true);
+            Time.timeScale = 1f;
+        }
     }
 }
