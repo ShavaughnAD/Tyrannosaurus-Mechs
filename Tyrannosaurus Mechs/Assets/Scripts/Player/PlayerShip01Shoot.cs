@@ -16,6 +16,8 @@ public class PlayerShip01Shoot : PlayerMovement
 
             GameObject bullet02 = Instantiate(PlayerShip01Bullet);
             bullet02.transform.position = bulletPosition02.transform.position;
+
+            muzzleFlash.Play();
         }
     }
 }
