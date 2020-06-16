@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public bool gameIsPaused = false;
 
     public GameObject pauseMenuUI = null;
+    public GameObject _Options;
     //public GameObject thePlayer = null;
 
     public AudioSource audSrc;
@@ -20,9 +21,11 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         pauseMenuUI = GameObject.Find("PausePanel");
+        _Options = GameObject.Find("Options Menu");
         //thePlayer = GameObject.Find("Gup");
         audSrc = GetComponent<AudioSource>();
         pauseMenuUI.SetActive(false);
+        _Options.SetActive(false);
         charSelect = GameObject.Find("MainCanvas");
         currScene = SceneManager.GetActiveScene().name;
     }

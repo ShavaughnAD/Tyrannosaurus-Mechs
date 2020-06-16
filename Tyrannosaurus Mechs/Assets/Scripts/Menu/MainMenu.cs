@@ -7,17 +7,10 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public string currentScene;
-    public GameObject winScreen;
-    public GameObject loseScreen;
 
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().name;
-        winScreen = GameObject.Find("WinScreen");
-        loseScreen = GameObject.Find("LoseScreen");
-
-        //winScreen.SetActive(false);
-        //loseScreen.SetActive(false);
     }
 
     public void PlayGame()
