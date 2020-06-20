@@ -69,6 +69,8 @@ public class EnemyHealth : Health
             BFB.enabled = false;
             BFP2.enabled = false;
             BFPDS.enabled = false;
+            GameManager.gameManager.LevelCompleted();
+            GameManager.gameManager.GameWon();
             Destroy(gameObject);
         }
         else

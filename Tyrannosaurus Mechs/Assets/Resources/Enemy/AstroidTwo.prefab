@@ -41,8 +41,8 @@ GameObject:
   - component: {fileID: 1227219422999504167}
   - component: {fileID: 1619448305198674392}
   - component: {fileID: 2154680858978032738}
-  - component: {fileID: 2581020779253219311}
   - component: {fileID: -4297490297881708964}
+  - component: {fileID: 5067774642067965220}
   m_Layer: 0
   m_Name: AstroidTwo
   m_TagString: Enemy
@@ -131,29 +131,6 @@ CircleCollider2D:
   m_Offset: {x: -0.50138855, y: 0.44568062}
   serializedVersion: 2
   m_Radius: 6.4931545
---- !u!114 &2581020779253219311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383461635493478713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8c936198c3d834f992c256dcfd16ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LootItems:
-  - name: Speed
-    item: {fileID: 8136156369200138696, guid: f0ea09e8f83ed9d4db742970afeeab54, type: 3}
-    dropRarity: 40
-  - name: Damage
-    item: {fileID: 5864191362142803989, guid: 593c3ec206938a84dbb8b61dec7144ab, type: 3}
-    dropRarity: 80
-  - name: Nuke
-    item: {fileID: 3802745532940195128, guid: fb41e4aaa5819144dac2774ced41660c, type: 3}
-    dropRarity: 2
-  dropChance: 50
 --- !u!114 &-4297490297881708964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +151,16 @@ MonoBehaviour:
     type: 3}
   spawnP: {fileID: 444558570}
   blinkEffectTime: 0.5
+--- !u!114 &5067774642067965220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383461635493478713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2c0fd0ac056534eb3899807f21b3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0

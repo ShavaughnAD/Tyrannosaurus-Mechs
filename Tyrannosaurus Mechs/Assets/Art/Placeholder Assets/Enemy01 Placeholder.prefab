@@ -204,5 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8c936198c3d834f992c256dcfd16ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LootItems: []
+  LootItems:
+  - name: 
+    item: {fileID: 0}
+    dropRarity: 0
   dropChance: 0
