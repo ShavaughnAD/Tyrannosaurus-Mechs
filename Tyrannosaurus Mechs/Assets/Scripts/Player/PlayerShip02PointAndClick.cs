@@ -4,19 +4,25 @@ public class PlayerShip02PointAndClick : PlayerMovement
 {
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
+    public GameObject crosshair;
     public float bulletSpeed = 60f;
 
     Camera cam;
     Vector2 mousePos;
+    Vector3 target;
 
     void Start()
     {
+        crosshair = GameObject.FindGameObjectWithTag("Crosshair");
         //Cursor.visible = false;
         cam = Camera.main;
+        crosshair.GetComponent<SpriteRenderer>().sortingLayerName = "Crosshair";
     }
 
     public override void Update()
     {
+        target = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.transform.position.z));
+        crosshair.transform.position = new Vector2(target.x, target.y);
         base.Update();
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 lookDir = mousePos - playerRB.position;
@@ -27,24 +33,4 @@ public class PlayerShip02PointAndClick : PlayerMovement
             Destroy(bullet, 2);
         }
     }
-
-    //target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
-    //    crosshairs.transform.position = new Vector2(target.x, target.y);
-
-    //    //Vector3 difference = target - player.transform.position;
-    //    //float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-    //    //player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        //fireBullet(direction, rotationZ);
-    //    }
-
-    //    void fireBullet(Vector2 direction, float rotationZ)
-    //{
-    //    GameObject b = Instantiate(bulletPrefab) as GameObject;
-    //    b.transform.position = player.transform.position;
-    //    b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-    //    b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
-    //}
 }

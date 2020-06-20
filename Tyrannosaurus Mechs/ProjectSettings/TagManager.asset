@@ -13,6 +13,7 @@ TagManager:
   - Manager
   - WinScreen
   - LoseScreen
+  - Crosshair
   layers:
   - Default
   - TransparentFX
@@ -47,12 +48,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Hidden
+    uniqueID: 842576501
+    locked: 0
   - name: Background
     uniqueID: 1830058997
+    locked: 0
+  - name: BackgroundAdditions
+    uniqueID: 3767412915
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: PlayersAndEnemies
+  - name: Playfield
     uniqueID: 844512809
+    locked: 0
+  - name: Crosshair
+    uniqueID: 1235333993
     locked: 0

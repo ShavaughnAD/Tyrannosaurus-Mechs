@@ -4905,9 +4905,9 @@ MonoBehaviour:
   ability: 0
   playerRB: {fileID: 0}
   moveSpeed: 5
-  coolDownTimer: 10
-  weaponDamage: 10
-  abilityActiveTime: 2
+  coolDownTimer: 6
+  weaponDamage: 15
+  abilityActiveTime: 3
   shield: {fileID: 7469689982626224770}
   chomp: {fileID: 0}
   muzzleFlash: {fileID: 318592473523828943}
@@ -4930,7 +4930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f498aa51596f5104089e0c1d2f5c3b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 10
   currentHealth: 0
   damageTaken: 0
   immune: 0

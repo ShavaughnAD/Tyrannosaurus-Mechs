@@ -527,7 +527,7 @@ MonoBehaviour:
   playerRB: {fileID: 0}
   moveSpeed: 5
   coolDownTimer: 8
-  weaponDamage: 10
+  weaponDamage: 12
   abilityActiveTime: 4
   shield: {fileID: 0}
   chomp: {fileID: 0}
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f498aa51596f5104089e0c1d2f5c3b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 8
   currentHealth: 0
   damageTaken: 0
   immune: 0
