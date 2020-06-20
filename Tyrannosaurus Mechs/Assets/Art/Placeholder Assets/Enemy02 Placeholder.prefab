@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2413819644275758945}
   - component: {fileID: 2587201532330393549}
   - component: {fileID: -340664788555395371}
+  - component: {fileID: 838325188}
+  - component: {fileID: 3505742529355176496}
   m_Layer: 0
   m_Name: Enemy02 Placeholder
   m_TagString: Enemy
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 6681384476088072720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0.5}
+  m_LocalScale: {x: 1.5000018, y: 1.5000018, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -93,7 +95,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6681384476088072720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6398bc0ba521f2048bce6c9cafa7a3fb, type: 3}
   m_Name: 
@@ -174,3 +176,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LootItems: []
   dropChance: 0
+--- !u!114 &838325188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681384476088072720}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa6cfbdc76994442acbd732e02f5c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4193583667243190, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
+  moveSpeed: 1
+--- !u!114 &3505742529355176496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681384476088072720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b31ae02d644be458a28becf5b3b952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
