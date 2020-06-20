@@ -149,11 +149,11 @@ MonoBehaviour:
     dropRarity: 40
   - name: Damage
     item: {fileID: 5864191362142803989, guid: 593c3ec206938a84dbb8b61dec7144ab, type: 3}
-    dropRarity: 33
+    dropRarity: 80
   - name: Nuke
-    item: {fileID: 6746918500233413860, guid: aa646a9398804674e9251d9575b79331, type: 3}
+    item: {fileID: 3802745532940195128, guid: fb41e4aaa5819144dac2774ced41660c, type: 3}
     dropRarity: 2
-  dropChance: 25
+  dropChance: 50
 --- !u!114 &-4297490297881708964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +173,4 @@ MonoBehaviour:
   astroidMedium: {fileID: 2383461635493478713, guid: b8553c43489eb2a48b02508b22c53cef,
     type: 3}
   spawnP: {fileID: 444558570}
+  blinkEffectTime: 0.5
