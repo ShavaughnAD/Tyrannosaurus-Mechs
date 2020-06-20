@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public float timer;
     public Text timerText;
     public Text scoreText;
+    public Text hSText;
 
     public Text livesText;
 
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         timerText.enabled = false;
         scoreText.text = score.ToString();
         scoreText.enabled = false;
+        hSText.enabled = false;
     }
 
     void Start()
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
         livesText.text = lives.ToString();
         scoreText.text = "Score: " + score.ToString();
         timerText.text = "Time: " + Mathf.Round(timer).ToString();
+        hSText.text = "HighScore: " + PlayerPrefs.GetInt("HighScore");
     }
 
     public void AddExtraHealth()
@@ -92,6 +95,7 @@ public class GameManager : MonoBehaviour
         gameStarted = true;
         scoreText.enabled = true;
         timerText.enabled = true;
+        hSText.enabled = true;
         BossFirePattern2.BFP2.Shoot();
     }
 
@@ -119,7 +123,11 @@ public class GameManager : MonoBehaviour
 
     public void CheckHighScore()
     {
-
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            PlayerPrefs.Save();
+        }
     }
 }
 

@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 2295475153922314682}
   - component: {fileID: 2413819644275758945}
   - component: {fileID: 2587201532330393549}
+  - component: {fileID: 690826649448117397}
   m_Layer: 0
   m_Name: Enemy01 Placeholder
   m_TagString: Enemy
@@ -157,11 +158,14 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damageTaken: 0
+  immune: 0
   killScore: 100
   isBoss: 0
   BFP2: {fileID: 0}
   BFPDS: {fileID: 0}
   BFB: {fileID: 0}
+  dropItem: {fileID: 0}
+  blinkEffectTime: 0.5
 --- !u!61 &2587201532330393549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -188,3 +192,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28316814, y: 0.3845803}
   m_EdgeRadius: 0
+--- !u!114 &690826649448117397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681384476088072720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8c936198c3d834f992c256dcfd16ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LootItems:
+  - name: 
+    item: {fileID: 0}
+    dropRarity: 0
+  dropChance: 0

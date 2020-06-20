@@ -6,7 +6,7 @@ public class PowerUp : MonoBehaviour
 {
     public float multiplier = 1.5f;
     public float duration = 4f;
-
+    public GameObject pS;
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player" && transform.tag == "Speed")
@@ -20,6 +20,7 @@ public class PowerUp : MonoBehaviour
         if(collision.tag == "Player" && transform.tag == "Nuke")
         {
            PickUp3();
+
         }
     }
     IEnumerator PickUp(Collider2D player)
@@ -47,6 +48,7 @@ public class PowerUp : MonoBehaviour
         transform.GetComponent<SpriteRenderer>().enabled = false;
         transform.GetComponent<Collider2D>().enabled = false;
         Explode();
+        pS.GetComponent<ParticleSystem>().Play();
         Destroy(gameObject);  
     }
     void Explode()
@@ -54,6 +56,7 @@ public class PowerUp : MonoBehaviour
         Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(transform.position, 5f);
         foreach(Collider2D enemys in collider2Ds)
         {
+           
             EnemyHealth enemy = enemys.GetComponent<EnemyHealth>();
             if(enemy!= null)
             {

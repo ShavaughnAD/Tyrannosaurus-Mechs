@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (skillReady)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.E))
             {
                 AbilityUsage();
             }

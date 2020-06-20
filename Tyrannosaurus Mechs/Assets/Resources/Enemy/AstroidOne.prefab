@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4004608955561339933}
   - component: {fileID: 3488090979959968008}
   - component: {fileID: 3685495643132420441}
+  - component: {fileID: 2176234176589193082}
   m_Layer: 0
   m_Name: AstroidOne
   m_TagString: Enemy
@@ -123,6 +124,7 @@ MonoBehaviour:
   BFPDS: {fileID: 0}
   BFB: {fileID: 0}
   dropItem: {fileID: 0}
+  blinkEffectTime: 0.5
 --- !u!114 &3488090979959968008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,14 +140,14 @@ MonoBehaviour:
   LootItems:
   - name: Speed
     item: {fileID: 8136156369200138696, guid: f0ea09e8f83ed9d4db742970afeeab54, type: 3}
-    dropRarity: 40
+    dropRarity: 8
   - name: Power
     item: {fileID: 5864191362142803989, guid: 593c3ec206938a84dbb8b61dec7144ab, type: 3}
-    dropRarity: 34
+    dropRarity: 20
   - name: Nuke
-    item: {fileID: 6746918500233413860, guid: aa646a9398804674e9251d9575b79331, type: 3}
-    dropRarity: 1
-  dropChance: 25
+    item: {fileID: 3802745532940195128, guid: fb41e4aaa5819144dac2774ced41660c, type: 3}
+    dropRarity: 2
+  dropChance: 30
 --- !u!114 &3685495643132420441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,3 +161,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+--- !u!114 &2176234176589193082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732166920188325719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2c0fd0ac056534eb3899807f21b3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
