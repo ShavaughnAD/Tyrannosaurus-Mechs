@@ -6,12 +6,10 @@ public class PlayerHealth : Health
     public Text healthText;
     public Vector3 respawnPoint;
 
-    private Material blinkWhite;
-    private Material blinkDefault;
-    SpriteRenderer self;
-
     public AudioClip sDamage;
     public AudioSource auSource;
+
+    public Animator playerAnimator;
     public override void Awake()
     {
         base.Awake();
@@ -26,9 +24,6 @@ public class PlayerHealth : Health
     void Start()
     {
         GameRestart();
-        self = GetComponent<SpriteRenderer>();
-        blinkWhite = Resources.Load("WhiteFlash", typeof(Material)) as Material;
-        blinkDefault = self.material;
     }
 
     public override void TakeDamage(float damageAmount)
@@ -36,15 +31,16 @@ public class PlayerHealth : Health
         base.TakeDamage(damageAmount);
         currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
 
-        self.material = blinkWhite;
+
         //auSource.PlayOneShot(sDamage);
+        playerAnimator.SetBool("isDamaged",true);
         if (currentHealth == 0)
         {
             
         }
         else
         {
-            Invoke("ResetMaterial", .1f);
+            
         }
     }
     void GameRestart()
@@ -59,12 +55,5 @@ public class PlayerHealth : Health
     void Death(float param)
     {
         //Respawn();
-    }
-
-    void ResetMaterial()
-    {
-        self.material = blinkDefault;
-        auSource.PlayOneShot(sDamage);
-    }
-    
+    }    
 }
