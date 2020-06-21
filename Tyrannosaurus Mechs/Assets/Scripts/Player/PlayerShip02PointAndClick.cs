@@ -13,10 +13,8 @@ public class PlayerShip02PointAndClick : PlayerMovement
 
     void Start()
     {
-        crosshair = GameObject.FindGameObjectWithTag("Crosshair");
         //Cursor.visible = false;
         cam = Camera.main;
-        crosshair.GetComponent<SpriteRenderer>().sortingLayerName = "Crosshair";
     }
 
     public override void Update()

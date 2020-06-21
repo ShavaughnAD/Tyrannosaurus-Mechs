@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public PlayerMovement playerShipMovement;
 
     public bool gameStarted = false;
-
     void Awake()
     {
         gameManager = this;
@@ -30,7 +29,6 @@ public class GameManager : MonoBehaviour
         timerText.enabled = false;
         scoreText.text = score.ToString();
         scoreText.enabled = false;
-        hSText.enabled = false;
     }
 
     void Start()
