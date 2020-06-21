@@ -2040,7 +2040,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2853266360083088007}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e802c682de8b064b9264b0573c59972, type: 3}
   m_Name: 
@@ -5578,7 +5578,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ee93386f6e9ccbe4ebbc685f5e6ec204, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
