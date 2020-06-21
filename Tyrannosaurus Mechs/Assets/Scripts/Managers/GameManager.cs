@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;
     public PlayerMovement playerShipMovement;
 
+    public float enableScreenTimer = 2;
+
     public bool gameStarted = false;
     void Awake()
     {
@@ -111,7 +113,8 @@ public class GameManager : MonoBehaviour
     {
         if (lives <= 0)
         {
-            gameOverScreen.SetActive(true);
+            playerShipMovement.GetComponent<PlayerHealth>().Death();
+            Invoke("EnableScreen", enableScreenTimer);
         }
         else
         {
@@ -126,6 +129,11 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", score);
             PlayerPrefs.Save();
         }
+    }
+
+    public void EnableScreen()
+    {
+        gameOverScreen.SetActive(true);
     }
 }
 

@@ -4769,6 +4769,7 @@ GameObject:
   - component: {fileID: 6202807913798413705}
   - component: {fileID: 8449473765895399372}
   - component: {fileID: 1623466607709778271}
+  - component: {fileID: 4955026525028271792}
   m_Layer: 0
   m_Name: PlayerShip2 Placeholder
   m_TagString: Player
@@ -4941,6 +4942,8 @@ MonoBehaviour:
   sDamage: {fileID: 0}
   auSource: {fileID: 0}
   playerAnimator: {fileID: 0}
+  explosionEfx: {fileID: 8590898932773608726, guid: e646307317b0621479a43de6fbd50e09,
+    type: 3}
 --- !u!114 &1623466607709778271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4953,6 +4956,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6703235eb786914c9d01edc7f476f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &4955026525028271792
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325264543542691372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8968c71ff609f9459f823d202e993a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3696821447274161189
 GameObject:
   m_ObjectHideFlags: 0

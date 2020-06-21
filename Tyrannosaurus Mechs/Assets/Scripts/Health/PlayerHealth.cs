@@ -10,10 +10,12 @@ public class PlayerHealth : Health
     public AudioSource auSource;
 
     public Animator playerAnimator;
+
+    public GameObject explosionEfx;
     public override void Awake()
     {
         base.Awake();
-        onDeath.BindToEvent(Death);
+        playerAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -36,7 +38,7 @@ public class PlayerHealth : Health
         playerAnimator.SetBool("isDamaged",true);
         if (currentHealth == 0)
         {
-            
+            Death();
         }
         else
         {
@@ -52,8 +54,13 @@ public class PlayerHealth : Health
         respawnPoint = transform.position;
     }
 
-    void Death(float param)
+    public void Death()
     {
+        playerAnimator.SetBool("isDamaged", false);
+        playerAnimator.applyRootMotion = false;
+        GetComponent<PlayerMovement>().enabled = false;
+        playerAnimator.SetBool("isDead", true);
         //Respawn();
+        GameObject explosion = Instantiate(explosionEfx, transform.position, Quaternion.identity);
     }    
 }

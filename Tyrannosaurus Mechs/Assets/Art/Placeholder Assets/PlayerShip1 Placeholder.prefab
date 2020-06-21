@@ -222,8 +222,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 844512809
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 09f6654b84e03d842b42e3942158b018, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -332,6 +332,8 @@ MonoBehaviour:
   sDamage: {fileID: 8300000, guid: 9eec5b6a22e92c349918971dbe5bc393, type: 3}
   auSource: {fileID: 502834820201958921}
   playerAnimator: {fileID: 5144430679502311313}
+  explosionEfx: {fileID: 8590898932773608726, guid: e646307317b0621479a43de6fbd50e09,
+    type: 3}
 --- !u!114 &7857175054330014164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,7 +455,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4ec67d4214086544094308cfae646c41, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
