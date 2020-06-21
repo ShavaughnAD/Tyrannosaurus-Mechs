@@ -177,9 +177,9 @@ GameObject:
   - component: {fileID: 1455627864917254963}
   - component: {fileID: 8590411089985949318}
   - component: {fileID: 9199366280464554410}
-  - component: {fileID: 2764398381030932429}
   - component: {fileID: 5406494175464019487}
   - component: {fileID: 5069530540693024893}
+  - component: {fileID: 2015518258}
   m_Layer: 0
   m_Name: Boss Placeholder
   m_TagString: Enemy
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a0a81359f0b6c4a8ece8eb19e85ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletsAmount: 30
+  bulletsAmount: 5
   startAngle: 90
   endAngle: 270
 --- !u!114 &1455627864917254963
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988959072326566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c88638d604524a48afd2b3dd4447b9b, type: 3}
   m_Name: 
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988959072326566}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 620a63d50501d7741beee827cdabcd51, type: 3}
   m_Name: 
@@ -325,27 +325,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2764398381030932429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1988959072326566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fbd85bf8fde44f46a81791f5cc0b98f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
-  damageTaken: 0
-  killScore: 0
-  isBoss: 1
-  BFP2: {fileID: 0}
-  BFPDS: {fileID: 0}
-  BFB: {fileID: 0}
-  dropItem: {fileID: 0}
 --- !u!61 &5406494175464019487
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -386,3 +365,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LootItems: []
   dropChance: 0
+--- !u!114 &2015518258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988959072326566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83baa0bab3b880d4f8c7006cbb8285bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 250
+  currentHealth: 0
+  damageTaken: 0
+  immune: 0
+  killScore: 0
+  isBoss: 1
+  stageOneHealth: 225
+  stageTwoHealth: 100
+  stageThreeHealth: 50
+  bossFirePattern2: {fileID: 0}
+  bossFireBullets: {fileID: 0}
+  bossDoubleSpiral: {fileID: 0}
+  blinkEffectTime: 0.5

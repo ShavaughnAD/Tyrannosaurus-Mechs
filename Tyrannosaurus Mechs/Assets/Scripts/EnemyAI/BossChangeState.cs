@@ -2,11 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossChangeState : EnemyHealth
+public class BossChangeState : Health
 {
+    public int killScore;
+    public bool isBoss = false;
+
+    public float stageOneHealth = 225;
+    public float stageTwoHealth = 100;
+    public float stageThreeHealth = 50;
+
+    public BossFirePattern2 bossFirePattern2;
+    public BossFireBullets bossFireBullets;
+    public BossFireDoubleSpiral bossDoubleSpiral;
+
+    [Range(0.1f, 0.5f)]
+    public float blinkEffectTime = 0.5f; //The lower this value, the faster the blink
+    Material matBlink;
+    Material matDefault;
+    SpriteRenderer spriteRend;
+
     public enum Stage
     {
-        WaitingToStart,
         Stage_1,
         Stage_2,
         Stage_3,
@@ -14,56 +30,79 @@ public class BossChangeState : EnemyHealth
 
     private Stage stage;
 
-    private void Awake()
+    public override void Awake()
     {
-        stage = Stage.WaitingToStart;
+        base.Awake();
+        bossFirePattern2 = GetComponent<BossFirePattern2>();
+        bossFireBullets = GetComponent<BossFireBullets>();
+        bossDoubleSpiral = GetComponent<BossFireDoubleSpiral>();
     }
 
-    private void StartNextStage()
+    private void Start()
     {
-        switch (stage)
+        spriteRend = GetComponent<SpriteRenderer>();
+        matBlink = Resources.Load("Effects/Blink", typeof(Material)) as Material;
+        matDefault = spriteRend.material;
+    }
+
+    public override void TakeDamage(float damageAmount)
+    {
+        base.TakeDamage(damageAmount);
+        currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
+        spriteRend.material = matBlink;
+        CheckStage();
+
+    }
+
+    void CheckStage()
+    {
+        if(currentHealth <= 200)
         {
-            case Stage.WaitingToStart:
-                stage = Stage.Stage_1;
-                break;
-            case Stage.Stage_1:
-                stage = Stage.Stage_2;
-                break;
-            case Stage.Stage_2:
-                stage = Stage.Stage_3;
-                break;
+            bossFirePattern2.enabled = false;
+            bossDoubleSpiral.enabled = true;
         }
-        Debug.Log("Starting next stage: " + stage);
-    }
 
-    private void BossBattle(object sender, System.EventArgs e)
-    {
-        switch (stage)
+        if (currentHealth <= 100)
         {
-            case Stage.Stage_1:
-                if (currentHealth <= 175f)
-                {
-                    StartNextStage();
-                }
-                break;
-            case Stage.Stage_2:
-                if (currentHealth <= 100f)
-                {
-                    StartNextStage();
-                }
-                break;
+            bossFirePattern2.enabled = false;
+            bossFireBullets.enabled = true;
+        }
+
+        if (currentHealth == 0)
+        {
+            Death();
+        }
+        else
+        {
+            Invoke("ResetMaterial", blinkEffectTime);
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Death()
     {
-        
+        GameManager.gameManager.score += killScore;
+
+        if (isBoss == true)
+        {
+            gameObject.SetActive(false);
+            Invoke("LoadMenu", .5f);
+            GameManager.gameManager.LevelCompleted();
+            GameManager.gameManager.GameWon();
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void ResetMaterial()
     {
-        
+        spriteRend.material = matDefault;
+    }
+
+    void StageSettings()
+    {
+
     }
 }
