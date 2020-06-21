@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class BossChangeState : Health
 {
@@ -10,6 +9,8 @@ public class BossChangeState : Health
     public float stageOneHealth = 225;
     public float stageTwoHealth = 100;
     public float stageThreeHealth = 50;
+
+    public Image healthBar;
 
     public BossFirePattern2 bossFirePattern2;
     public BossFireBullets bossFireBullets;
@@ -21,15 +22,6 @@ public class BossChangeState : Health
     Material matDefault;
     SpriteRenderer spriteRend;
 
-    public enum Stage
-    {
-        Stage_1,
-        Stage_2,
-        Stage_3,
-    }
-
-    private Stage stage;
-
     public override void Awake()
     {
         base.Awake();
@@ -38,11 +30,16 @@ public class BossChangeState : Health
         bossDoubleSpiral = GetComponent<BossFireDoubleSpiral>();
     }
 
-    private void Start()
+    void Start()
     {
         spriteRend = GetComponent<SpriteRenderer>();
         matBlink = Resources.Load("Effects/Blink", typeof(Material)) as Material;
         matDefault = spriteRend.material;
+    }
+
+    void Update()
+    {
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
 
     public override void TakeDamage(float damageAmount)
@@ -81,19 +78,11 @@ public class BossChangeState : Health
     void Death()
     {
         GameManager.gameManager.score += killScore;
-
-        if (isBoss == true)
-        {
-            gameObject.SetActive(false);
-            Invoke("LoadMenu", .5f);
-            GameManager.gameManager.LevelCompleted();
-            GameManager.gameManager.GameWon();
-            Destroy(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        gameObject.SetActive(false);
+        Invoke("LoadMenu", .5f);
+        GameManager.gameManager.LevelCompleted();
+        GameManager.gameManager.GameWon();
+        Destroy(gameObject);
     }
 
     void ResetMaterial()
@@ -105,4 +94,6 @@ public class BossChangeState : Health
     {
 
     }
+
+
 }

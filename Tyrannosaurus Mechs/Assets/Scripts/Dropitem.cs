@@ -17,7 +17,6 @@ public class Dropitem : MonoBehaviour
 
   public void LootDrop()
   {
-        Debug.LogError("Called   " + gameObject.name);
      int calculateDropChance = Random.Range(0, 101);
      if (calculateDropChance > dropChance)
      {

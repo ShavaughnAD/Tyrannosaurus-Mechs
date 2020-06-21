@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerHealth : Health
 {
-    public Text healthText;
     public Vector3 respawnPoint;
 
     public AudioClip sDamage;
@@ -18,11 +16,6 @@ public class PlayerHealth : Health
         playerAnimator = GetComponent<Animator>();
     }
 
-    void Update()
-    {
-        //healthText.text = currentHealth.ToString("0");
-    }
-
     void Start()
     {
         GameRestart();
@@ -31,19 +24,8 @@ public class PlayerHealth : Health
     public override void TakeDamage(float damageAmount)
     {
         base.TakeDamage(damageAmount);
-        currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
-
-
         //auSource.PlayOneShot(sDamage);
         playerAnimator.SetBool("isDamaged",true);
-        if (currentHealth == 0)
-        {
-            Death();
-        }
-        else
-        {
-            
-        }
     }
     void GameRestart()
     {
@@ -62,5 +44,16 @@ public class PlayerHealth : Health
         playerAnimator.SetBool("isDead", true);
         //Respawn();
         GameObject explosion = Instantiate(explosionEfx, transform.position, Quaternion.identity);
-    }    
+    }
+
+    public void SetImmunityTrue()
+    {
+        immune = true;
+    }
+
+    public void SetImmuneFalse()
+    {
+        immune = false;
+        playerAnimator.SetBool("isDamaged", false);
+    }
 }

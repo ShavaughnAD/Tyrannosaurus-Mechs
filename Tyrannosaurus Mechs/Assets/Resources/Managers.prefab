@@ -55,4 +55,5 @@ MonoBehaviour:
   gameWonScreen: {fileID: 0}
   gameOverScreen: {fileID: 0}
   playerShipMovement: {fileID: 0}
+  enableScreenTimer: 2
   gameStarted: 0

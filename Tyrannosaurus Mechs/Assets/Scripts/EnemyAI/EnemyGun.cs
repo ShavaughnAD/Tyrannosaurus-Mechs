@@ -13,8 +13,7 @@ public class EnemyGun : MonoBehaviour
     void Start()
     {
         Invoke("FireEnemyBullet", 1f);
-
-        target = GameObject.FindWithTag("Player");
+        target = GameManager.gameManager.playerShipMovement.gameObject;
     }
 
     
