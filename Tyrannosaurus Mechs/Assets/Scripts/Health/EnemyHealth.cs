@@ -4,10 +4,8 @@ public class EnemyHealth : Health
 {
     public int killScore;
     public bool isBoss = false;
-    [HideInInspector] public BossFirePattern2 BFP2;
-    [HideInInspector] public BossFireDoubleSpiral BFPDS;
-    [HideInInspector] public BossFireBullets BFB;
     public Dropitem dropItem;
+    public GameObject damageFloater;
 
     #region Blinking Effect Variables
 
@@ -26,13 +24,6 @@ public class EnemyHealth : Health
         //onDeath.BindToEvent(Death);
         ResetHealth();
         dropItem = GetComponent<Dropitem>();
-        if (isBoss == true)
-        {
-            BFB = GetComponent<BossFireBullets>();
-            BFP2 = GetComponent<BossFirePattern2>();
-            BFPDS = GetComponent<BossFireDoubleSpiral>();
-            dropItem.enabled = true;
-        }
     }
 
     void Start()
@@ -45,6 +36,7 @@ public class EnemyHealth : Health
     public override void TakeDamage(float damageAmount)
     {
         base.TakeDamage(damageAmount);
+        damageTaken = damageAmount;
         currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
         spriteRend.material = matBlink;
         if(currentHealth == 0)
@@ -53,6 +45,10 @@ public class EnemyHealth : Health
         }
         else
         {
+            if(damageFloater != null)
+            {
+                ShowFloatingText();
+            }
             Invoke("ResetMaterial", blinkEffectTime);
         }
     }
@@ -60,23 +56,14 @@ public class EnemyHealth : Health
     void Death()
     {
         GameManager.gameManager.score += killScore;
+        dropItem.LootDrop();
+        Destroy(gameObject);
+    }
 
-        if(isBoss == true)
-        {
-            gameObject.SetActive(false);
-            Invoke("LoadMenu", .5f);
-            BFB.enabled = false;
-            BFP2.enabled = false;
-            BFPDS.enabled = false;
-            GameManager.gameManager.LevelCompleted();
-            GameManager.gameManager.GameWon();
-            Destroy(gameObject);
-        }
-        else
-        {
-            dropItem.LootDrop();
-            Destroy(gameObject);
-        }
+    void ShowFloatingText()
+    {
+        GameObject floatingText = Instantiate(damageFloater, transform.position, Quaternion.identity);
+        floatingText.transform.GetChild(0).GetComponent<TextMesh>().text = damageTaken.ToString("F0");
     }
 
     void ResetMaterial()
