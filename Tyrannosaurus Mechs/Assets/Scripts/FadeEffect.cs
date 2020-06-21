@@ -9,7 +9,6 @@ public class FadeEffect : MonoBehaviour
 
     public GameObject echo;
 
-    // Update is called once per frame
     void Update()
     {
         if(timeBtwSpawns <= 0)
