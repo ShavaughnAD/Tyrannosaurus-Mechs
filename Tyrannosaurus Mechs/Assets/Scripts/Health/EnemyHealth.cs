@@ -49,7 +49,6 @@ public class EnemyHealth : Health
         spriteRend.material = matBlink;
         if(currentHealth == 0)
         {
-            dropItem.LootDrop();
             Death();
         }
         else
@@ -75,6 +74,7 @@ public class EnemyHealth : Health
         }
         else
         {
+            dropItem.LootDrop();
             Destroy(gameObject);
         }
     }

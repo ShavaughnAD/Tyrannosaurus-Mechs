@@ -34,7 +34,6 @@ public class PlayerShip01Bullet : MonoBehaviour
         {
             PlayExplosion();
 
-            Debug.LogError(collision.name + " Recieved " + GameManager.gameManager.playerShipMovement.weaponDamage + "  Damage");
             collision.GetComponent<Health>().TakeDamage(GameManager.gameManager.playerShipMovement.weaponDamage);
             Destroy(gameObject);
         }
