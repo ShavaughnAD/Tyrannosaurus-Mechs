@@ -65,6 +65,9 @@ TagManager:
   - name: Playfield
     uniqueID: 844512809
     locked: 0
+  - name: Projectiles
+    uniqueID: 4170349899
+    locked: 0
   - name: Crosshair
     uniqueID: 1235333993
     locked: 0
