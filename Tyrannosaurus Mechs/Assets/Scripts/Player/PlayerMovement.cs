@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,9 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     float defaultMoveSpeed;
     float cooldown;
-    bool skillReady = true;
+    public bool skillReady = true;
 
-    //A bad way to check this but it works for now. Optimize later maybe
     bool shieldAbility = false;
     bool chompAbility = false;
     bool speedyAbility = false;
@@ -39,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     [TextArea]
     public string shipDescription;
 
+    public Image abilityIcon;
+
     bool autoMove = false;
 
     #endregion
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         playerHealth = GetComponent<Health>();
+        abilityIcon = GameObject.FindGameObjectWithTag("AbilityIcon").GetComponent<Image>();
     }
 
     void Start()
@@ -109,22 +112,18 @@ public class PlayerMovement : MonoBehaviour
 
         #region Ability
 
-        if (cooldown != coolDownTimer)
+        abilityIcon.fillAmount = cooldown / coolDownTimer;
+
+        cooldown += 1 * Time.deltaTime;
+        if (cooldown >= coolDownTimer)
         {
-            cooldown += 1 * Time.deltaTime;
-            if(cooldown >= coolDownTimer)
-            {
-                cooldown = coolDownTimer;
-                skillReady = true;
-            }
+            cooldown = coolDownTimer;
+            skillReady = true;
         }
 
-        if (skillReady)
+        if (Input.GetKey(KeyCode.Space) && skillReady == true)
         {
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.E))
-            {
-                AbilityUsage();
-            }
+            AbilityUsage();
         }
 
         #endregion
@@ -187,5 +186,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = defaultMoveSpeed;
         }
+
+        CancelInvoke();
     }
 }

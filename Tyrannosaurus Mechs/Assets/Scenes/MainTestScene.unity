@@ -616,7 +616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &396998441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,7 +1061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &827710561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2661,6 +2661,11 @@ PrefabInstance:
       propertyPath: playerStartPoint
       value: 
       objectReference: {fileID: 1037763054}
+    - target: {fileID: 1762860127, guid: 719a421be13d5e84b924083cc23387d3, type: 3}
+      propertyPath: ships.Array.data[1].shipAbilityIcon
+      value: 
+      objectReference: {fileID: -5483400245597574398, guid: 7ff474fc74bc23b46979803839546913,
+        type: 3}
     - target: {fileID: 1771555260, guid: 719a421be13d5e84b924083cc23387d3, type: 3}
       propertyPath: m_RootOrder
       value: 2

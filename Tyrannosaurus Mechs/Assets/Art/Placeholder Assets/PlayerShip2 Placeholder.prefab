@@ -4910,12 +4910,14 @@ MonoBehaviour:
   coolDownTimer: 6
   weaponDamage: 15
   abilityActiveTime: 3
+  skillReady: 1
   shield: {fileID: 7469689982626224770}
   chomp: {fileID: 0}
   muzzleFlash: {fileID: 318592473523828943}
   chompAnim: {fileID: 0}
   shipName: Green Giant
   shipDescription: Shoots in Direction of Mouse
+  abilityIcon: {fileID: 0}
   bulletSpawnPoint: {fileID: 1353073463119438554}
   bulletPrefab: {fileID: 5619474596126049422, guid: 07942b7e9e9e4f6459e4b3ba858aa6fb,
     type: 3}
@@ -5044,8 +5046,7 @@ SpriteRenderer:
   m_SortingLayerID: 1235333993
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7809205399895181096, guid: 0383aa3b099db9a4c98294a9f4c1dc6d,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 494297bcacbbf134986891e4d3f879be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5112,8 +5113,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7469689982626224770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.024, y: -1.16, z: 0}
-  m_LocalScale: {x: 0.09806683, y: 0.14697145, z: 1}
+  m_LocalPosition: {x: 0.0019, y: -1.16, z: 0}
+  m_LocalScale: {x: 0.04725194, y: 0.09789714, z: 1}
   m_Children: []
   m_Father: {fileID: 326559033506502530}
   m_RootOrder: 1
@@ -5178,11 +5179,11 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -6995903604872383772, guid: 63cf6eef12fa4904bb01f9dcee2f88af,
     type: 3}
-  m_Color: {r: 0, g: 0.70425534, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 13.08, y: 13}
+  m_Size: {x: 23.490002, y: 23.330416}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

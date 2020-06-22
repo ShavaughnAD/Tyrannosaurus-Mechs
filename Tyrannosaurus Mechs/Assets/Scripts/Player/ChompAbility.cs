@@ -32,6 +32,7 @@ public class ChompAbility : MonoBehaviour
 
     public void StopCrunch()
     {
+        actualDamage = damage;
         chompAnim.SetBool("Crunch", false);
     }
 }

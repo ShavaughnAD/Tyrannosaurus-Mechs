@@ -21,7 +21,6 @@ public class Health : MonoBehaviour
     {
         if (immune)
         {
-            Debug.LogError("Immune");
             return;
         }
         else

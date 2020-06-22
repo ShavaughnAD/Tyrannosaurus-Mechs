@@ -20,8 +20,6 @@ public class EnemyHealth : Health
     public override void Awake()
     {
         base.Awake();
-        //onHurt.BindToEvent(Hurt);
-        //onDeath.BindToEvent(Death);
         ResetHealth();
         dropItem = GetComponent<Dropitem>();
     }

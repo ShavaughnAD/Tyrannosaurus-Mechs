@@ -10,6 +10,7 @@ public class PlayerHealth : Health
     public Animator playerAnimator;
 
     public GameObject explosionEfx;
+
     public override void Awake()
     {
         base.Awake();
@@ -24,6 +25,11 @@ public class PlayerHealth : Health
     public override void TakeDamage(float damageAmount)
     {
         base.TakeDamage(damageAmount);
+        if (immune)
+        {
+            Debug.LogError(gameObject.name + " is Immune");
+            return;
+        }
         //auSource.PlayOneShot(sDamage);
         playerAnimator.SetBool("isDamaged",true);
     }
@@ -53,7 +59,8 @@ public class PlayerHealth : Health
 
     public void SetImmuneFalse()
     {
-        immune = false;
+        Debug.Log("Called");
         playerAnimator.SetBool("isDamaged", false);
+        immune = false;
     }
 }

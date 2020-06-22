@@ -4,6 +4,7 @@ public class AstroidHealth : Health
 {
     public GameObject astroidMedium;
     public Transform spawnP;
+    public GameObject damageFloater;
 
     #region BlinkingEffect Variables
 
@@ -25,6 +26,7 @@ public class AstroidHealth : Health
     public override void TakeDamage(float damageAmount)
     {
         base.TakeDamage(damageAmount);
+        damageTaken = damageAmount;
         currentHealth = Mathf.Clamp(currentHealth - damageAmount, 0, maxHealth);
         spriteRend.material = matBlink;
         if (currentHealth == 0)
@@ -33,6 +35,10 @@ public class AstroidHealth : Health
         }
         else
         {
+            if (damageFloater != null)
+            {
+                ShowFloatingText();
+            }
             Invoke("ResetMaterial", blinkEffectTime);
         }
     }
@@ -49,6 +55,12 @@ public class AstroidHealth : Health
     void ResetMaterial()
     {
         spriteRend.material = matDefault;
+    }
+
+    void ShowFloatingText()
+    {
+        GameObject floatingText = Instantiate(damageFloater, transform.position, Quaternion.identity);
+        floatingText.transform.GetChild(0).GetComponent<TextMesh>().text = damageTaken.ToString("F0");
     }
 
 }
