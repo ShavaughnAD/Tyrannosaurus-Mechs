@@ -998,7 +998,7 @@ GameObject:
   - component: {fileID: 2853266359699061495}
   - component: {fileID: 2853266359699061494}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1020,8 +1020,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -1}
-  m_SizeDelta: {x: 972, y: 499}
+  m_AnchoredPosition: {x: -3, y: -0.40000153}
+  m_SizeDelta: {x: 972, y: 500.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2853266359699061495
 CanvasRenderer:
@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 71659c6d2dbf27146be03f955f79e95b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b10f7d7be534a34f8af314dd816b25d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1815,7 +1815,6 @@ GameObject:
   - component: {fileID: 2853266360083088013}
   - component: {fileID: 2853266360083088012}
   - component: {fileID: 2853266360083088014}
-  - component: {fileID: 4228514116706572115}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -2033,23 +2032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: f38ade7e83a89204ebb349c1d2f6cbd7, type: 2}
---- !u!114 &4228514116706572115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2853266360083088007}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e802c682de8b064b9264b0573c59972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  winScreen: {fileID: 0}
-  loseScreen: {fileID: 0}
-  _MusicPlayer: {fileID: 0}
-  _winClip: {fileID: 8300000, guid: 372c1ab4d6358b84b8686dd0a560fa97, type: 3}
-  _loseClip: {fileID: 8300000, guid: 9e6c1adb384f1654ab52251962d2078f, type: 3}
 --- !u!1 &2853266360100757218
 GameObject:
   m_ObjectHideFlags: 0
@@ -5550,7 +5532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &74733583002484959
 Transform:
   m_ObjectHideFlags: 0
@@ -5578,7 +5560,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ee93386f6e9ccbe4ebbc685f5e6ec204, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
