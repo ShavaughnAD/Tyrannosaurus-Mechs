@@ -301,12 +301,14 @@ MonoBehaviour:
   coolDownTimer: 6
   weaponDamage: 10
   abilityActiveTime: 8
+  skillReady: 1
   shield: {fileID: 0}
   chomp: {fileID: 3596378873547149210}
   muzzleFlash: {fileID: 6352307560465180552}
   chompAnim: {fileID: 1580795273437000436}
   shipName: Red Rocket
   shipDescription: Shoots Straight Up
+  abilityIcon: {fileID: 0}
   PlayerShip01Bullet: {fileID: 6134037332248580840, guid: 9d6549fcc21d69b4dba5ed7fe677e6cf,
     type: 3}
   bulletPosition01: {fileID: 152239284}

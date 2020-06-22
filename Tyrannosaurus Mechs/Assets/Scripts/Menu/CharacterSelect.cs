@@ -22,7 +22,7 @@ public class CharacterSelect : MonoBehaviour
         public string shipName; //Display this to a Text
         [TextArea] public string shipDescription;
         public Sprite shipSprite;
-        //Will Comeback and make Ships a List so that it is easier to customize & work well with for Flexibility
+        public Sprite shipAbilityIcon;
     }
 
     #region UI Variables
@@ -32,6 +32,8 @@ public class CharacterSelect : MonoBehaviour
     public Text[] playerShipNames;
     public Text[] playerShipDescription;
     public Image[] playerShipImage;
+    public Image abilityBackground;
+    public Image abilityIcon;
 
     [Header("Pilot Variables")]
     public Text[] pilotName;
@@ -77,10 +79,11 @@ public class CharacterSelect : MonoBehaviour
         shipSelected = ship;
         shipSelectScreen.SetActive(false);
         pilotSelectScreen.SetActive(true);
-        //shipChosen.sprite = playerShip[shipSelected].GetComponent<SpriteRenderer>().sprite;
         shipChosen.sprite = ships[shipSelected].shipSprite;
         shipChosen.color = ships[shipSelected].shipObj.GetComponent<SpriteRenderer>().color;
-        //shipChosen.color = playerShip[shipSelected].GetComponent<SpriteRenderer>().color;
+
+        abilityBackground.sprite = ships[shipSelected].shipAbilityIcon;
+        abilityIcon.sprite = ships[shipSelected].shipAbilityIcon;
     }
 
     public void ChoosePilot(int pilot)
@@ -94,9 +97,6 @@ public class CharacterSelect : MonoBehaviour
     public void ConfirmButton()
     {
         characterSelectScreen.SetActive(false);
-        //GameObject ship= Instantiate(playerShip[shipSelected], playerStartPoint.position, Quaternion.identity);
-        //playerShipMovement = ship.GetComponent<PlayerMovement>();
-        //GameManager.gameManager.playerShipMovement = ship.GetComponent<PlayerMovement>();
 
         GameObject ship = Instantiate(ships[shipSelected].shipObj, playerStartPoint.position, Quaternion.identity);
         playerShipMovement = ship.GetComponent<PlayerMovement>();
@@ -132,21 +132,6 @@ public class CharacterSelect : MonoBehaviour
 
     public void DisplayShipInfo()
     {
-        //for(int i = 0; i < playerShip.Length; i++)
-        //{
-        //    playerShipNames[i].text = playerShip[i].GetComponent<PlayerMovement>().shipName;
-        //    playerShipDescription[i].text = "Lives: " + playerShip[i].GetComponent<Health>().maxHealth.ToString("F0") +
-        //        "\n" +
-        //        playerShip[i].GetComponent<PlayerMovement>().shipDescription 
-        //        + "\n" +
-        //        "Ability: " + playerShip[i].GetComponent<PlayerMovement>().ability.ToString();
-
-        //    playerShipImage[i].sprite = playerShip[i].GetComponent<SpriteRenderer>().sprite;
-        //    playerShipImage[i].color = playerShip[i].GetComponent<SpriteRenderer>().color;
-
-
-        //}
-
         for(int i = 0; i < ships.Count; i++)
         {
             playerShipNames[i].text = ships[i].shipName;
@@ -169,6 +154,5 @@ public class CharacterSelect : MonoBehaviour
             pilotImage[i].sprite = pilots[i].pilotSprite;
         }
     }
-
     #endregion
 }

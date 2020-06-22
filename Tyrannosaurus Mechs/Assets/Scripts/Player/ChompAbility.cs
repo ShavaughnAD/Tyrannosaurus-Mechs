@@ -26,12 +26,13 @@ public class ChompAbility : MonoBehaviour
         {
             actualDamage++;
             chompAnim.SetBool("Crunch", true);
-            collision.GetComponent<Health>().TakeDamage(damage);
+            collision.GetComponent<Health>().TakeDamage(actualDamage);
         }
     }
 
     public void StopCrunch()
     {
+        actualDamage = damage;
         chompAnim.SetBool("Crunch", false);
     }
 }

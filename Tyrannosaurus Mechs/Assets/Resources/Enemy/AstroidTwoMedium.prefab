@@ -120,6 +120,8 @@ MonoBehaviour:
   astroidMedium: {fileID: 1732166920188325719, guid: 9129cfae591a50942b8912da00953b3e,
     type: 3}
   spawnP: {fileID: 1315322632887513119}
+  damageFloater: {fileID: 3075385323352132901, guid: cb2a9289b0a99094d901560b198b0780,
+    type: 3}
   blinkEffectTime: 0.5
 --- !u!114 &6438796974263282192
 MonoBehaviour:
