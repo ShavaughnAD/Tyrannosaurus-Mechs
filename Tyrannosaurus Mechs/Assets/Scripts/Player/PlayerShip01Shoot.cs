@@ -6,11 +6,14 @@ public class PlayerShip01Shoot : PlayerMovement
     public GameObject bulletPosition01;
     public GameObject bulletPosition02;
 
+    public AudioSource auSource;
+    public AudioClip ShipOneFiring;
     public override void Update()
     {
         base.Update();
         if (Input.GetMouseButtonDown(0))
         {
+            auSource.PlayOneShot(ShipOneFiring);
             GameObject bullet01 = Instantiate(PlayerShip01Bullet);
             bullet01.transform.position = bulletPosition01.transform.position;
 
