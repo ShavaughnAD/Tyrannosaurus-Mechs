@@ -14,7 +14,11 @@ public class PauseMenu : MonoBehaviour
     public AudioSource audSrc;
     public AudioClip _On;
 
-    public GameObject charSelect;
+    public GameObject charselect;
+    public GameObject pilotselect;
+    public GameObject _confirmation;
+    public GameObject _win;
+    public GameObject _loose;
 
     private string currScene;
 
@@ -22,11 +26,9 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI = GameObject.Find("PausePanel");
         _Options = GameObject.Find("Options Menu");
-        //thePlayer = GameObject.Find("Gup");
         audSrc = GetComponent<AudioSource>();
         pauseMenuUI.SetActive(false);
         _Options.SetActive(false);
-        charSelect = GameObject.Find("MainCanvas");
         currScene = SceneManager.GetActiveScene().name;
     }
 
@@ -44,15 +46,19 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        //if (charSelect.activeInHierarchy == false)
-        //{
-        //    Cursor.visible = false;
-        //}
-        //else if (charSelect.activeInHierarchy == true)
-        //{
-        //    Cursor.visible = true;
-        //}
-
+        if(charselect.activeInHierarchy == true || 
+           pilotselect.activeInHierarchy == true || 
+           _confirmation.activeInHierarchy == true || 
+           _win.activeInHierarchy == true || 
+           _loose.activeInHierarchy == true ||
+           pauseMenuUI.activeInHierarchy == true)
+        {
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.visible = false;
+        }
     }
 
     public void Resume()

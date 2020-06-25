@@ -313,6 +313,8 @@ MonoBehaviour:
     type: 3}
   bulletPosition01: {fileID: 152239284}
   bulletPosition02: {fileID: 1690505194}
+  auSource: {fileID: 502834820201958921}
+  ShipOneFiring: {fileID: 8300000, guid: 9ba233c4a9048ba43ad5d5ae746796ed, type: 3}
 --- !u!114 &1864353084950797709
 MonoBehaviour:
   m_ObjectHideFlags: 0

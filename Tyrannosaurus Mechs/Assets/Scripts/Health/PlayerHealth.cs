@@ -30,7 +30,6 @@ public class PlayerHealth : Health
             Debug.LogError(gameObject.name + " is Immune");
             return;
         }
-        //auSource.PlayOneShot(sDamage);
         playerAnimator.SetBool("isDamaged",true);
     }
     void GameRestart()
