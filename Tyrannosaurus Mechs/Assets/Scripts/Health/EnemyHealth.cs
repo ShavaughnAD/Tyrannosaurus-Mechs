@@ -7,6 +7,13 @@ public class EnemyHealth : Health
     public Dropitem dropItem;
     public GameObject damageFloater;
 
+    public GameObject astroidNoise;
+    public Transform spawnA;
+    AudioSource noiseSource;
+
+
+
+
     #region Blinking Effect Variables
 
     [Range(0.1f, 0.5f)]
@@ -26,6 +33,12 @@ public class EnemyHealth : Health
 
     void Start()
     {
+        noiseSource = GetComponent<AudioSource>();
+        if(noiseSource == null)
+        {
+            gameObject.AddComponent<AudioSource>();
+            noiseSource = GetComponent<AudioSource>();
+        }
         spriteRend = GetComponent<SpriteRenderer>();
         matBlink = Resources.Load("Effects/Blink", typeof(Material)) as Material;
         matDefault = spriteRend.material;
@@ -53,6 +66,7 @@ public class EnemyHealth : Health
 
     void Death()
     {
+        Instantiate(astroidNoise, spawnA.position, Quaternion.identity);
         GameManager.gameManager.score += killScore;
         dropItem.LootDrop();
         Destroy(gameObject);

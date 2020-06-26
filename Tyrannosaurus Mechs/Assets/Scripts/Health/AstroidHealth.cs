@@ -6,6 +6,8 @@ public class AstroidHealth : Health
     public Transform spawnP;
     public GameObject damageFloater;
 
+    public GameObject astroidLNoise;
+
     #region BlinkingEffect Variables
 
     [Range(0.1f, 0.5f)]
@@ -17,7 +19,7 @@ public class AstroidHealth : Health
     #endregion
 
     void Start()
-    {
+    {       
         spriteRend = GetComponent<SpriteRenderer>();
         matBlink = Resources.Load("Effects/Blink", typeof(Material)) as Material;
         matDefault = spriteRend.material;
@@ -48,6 +50,7 @@ public class AstroidHealth : Health
         for (int i = 0; i < 1; i++)
         {
             Instantiate(astroidMedium, spawnP.position, Quaternion.identity);
+            Instantiate(astroidLNoise, spawnP.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

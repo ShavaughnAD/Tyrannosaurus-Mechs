@@ -304,6 +304,8 @@ MonoBehaviour:
   skillReady: 1
   shield: {fileID: 0}
   chomp: {fileID: 3596378873547149210}
+  skillSoundEffect: {fileID: 0}
+  auSource: {fileID: 502834820201958921}
   muzzleFlash: {fileID: 6352307560465180552}
   chompAnim: {fileID: 1580795273437000436}
   shipName: Red Rocket
@@ -313,7 +315,6 @@ MonoBehaviour:
     type: 3}
   bulletPosition01: {fileID: 152239284}
   bulletPosition02: {fileID: 1690505194}
-  auSource: {fileID: 502834820201958921}
   ShipOneFiring: {fileID: 8300000, guid: 9ba233c4a9048ba43ad5d5ae746796ed, type: 3}
 --- !u!114 &1864353084950797709
 MonoBehaviour:
@@ -332,7 +333,7 @@ MonoBehaviour:
   damageTaken: 0
   immune: 0
   respawnPoint: {x: 0, y: 0, z: 0}
-  sDamage: {fileID: 8300000, guid: 9eec5b6a22e92c349918971dbe5bc393, type: 3}
+  sDamage: {fileID: 8300000, guid: 84f47643e2bea3a448e4ce0a485b8728, type: 3}
   auSource: {fileID: 502834820201958921}
   playerAnimator: {fileID: 5144430679502311313}
   explosionEfx: {fileID: 8590898932773608726, guid: e646307317b0621479a43de6fbd50e09,
@@ -713,6 +714,8 @@ MonoBehaviour:
   damage: 35
   actualDamage: 0
   chompAnim: {fileID: 1580795273437000436}
+  auSource: {fileID: 502834820201958921}
+  CrunchAbility: {fileID: 8300000, guid: 588d510af4f6b5447bfe8201cdaa882c, type: 3}
 --- !u!95 &1580795273437000436
 Animator:
   serializedVersion: 3

@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject shield;
     public GameObject chomp;
 
+    public AudioClip skillSoundEffect;
+    [HideInInspector] public AudioSource auSource;
+
     public ParticleSystem muzzleFlash;
 
     public Animator chompAnim;
@@ -47,6 +50,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        auSource = GetComponent<AudioSource>();
+        if(auSource == null)
+        {
+            Debug.LogError("Audio Source was null, adding one to " + gameObject.name);
+            gameObject.AddComponent<AudioSource>();
+        }
+        auSource.clip = skillSoundEffect;
         playerRB = GetComponent<Rigidbody2D>();
         playerHealth = GetComponent<Health>();
         abilityIcon = GameObject.FindGameObjectWithTag("AbilityIcon").GetComponent<Image>();
@@ -160,6 +170,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
         }
+        auSource.PlayOneShot(skillSoundEffect);
     }
 
     void StopAbility()

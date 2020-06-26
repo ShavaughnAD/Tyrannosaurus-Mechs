@@ -7,6 +7,9 @@ public class PowerUp : MonoBehaviour
     public float multiplier = 1.5f;
     public float duration = 4f;
     public GameObject pS;
+
+    public GameObject pickUpNoises;
+    public Transform spawnA;
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player" && transform.tag == "Speed")
@@ -22,6 +25,7 @@ public class PowerUp : MonoBehaviour
            PickUp3();
 
         }
+        Instantiate(pickUpNoises, spawnA.position, Quaternion.identity);
     }
     IEnumerator PickUp(Collider2D player)
     {

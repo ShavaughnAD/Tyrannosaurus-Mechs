@@ -11,6 +11,8 @@ public class PlayerShip02PointAndClick : PlayerMovement
     Vector2 mousePos;
     Vector3 target;
 
+    public AudioClip ShipthreeFiring;
+
     void Start()
     {
         //Cursor.visible = false;
@@ -24,8 +26,10 @@ public class PlayerShip02PointAndClick : PlayerMovement
         base.Update();
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 lookDir = mousePos - playerRB.position;
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            auSource.PlayOneShot(ShipthreeFiring);
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().AddForce(lookDir * bulletSpeed, ForceMode2D.Impulse);
             Destroy(bullet, 2);

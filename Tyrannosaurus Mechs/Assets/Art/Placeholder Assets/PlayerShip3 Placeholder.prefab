@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 6889072194790557583}
   - component: {fileID: 1324127132371028306}
   - component: {fileID: 2348365420330181970}
+  - component: {fileID: 1211667981521268675}
   m_Layer: 0
   m_Name: PlayerShip3 Placeholder
   m_TagString: Player
@@ -530,12 +531,16 @@ MonoBehaviour:
   coolDownTimer: 8
   weaponDamage: 12
   abilityActiveTime: 4
+  skillReady: 1
   shield: {fileID: 0}
   chomp: {fileID: 0}
+  skillSoundEffect: {fileID: 8300000, guid: 9954bba7d5ce4234792d3d3c9f1746c3, type: 3}
+  auSource: {fileID: 1211667981521268675}
   muzzleFlash: {fileID: 7389539948185357041}
   chompAnim: {fileID: 0}
   shipName: Yellow Yardbird
   shipDescription: Close Ranged
+  abilityIcon: {fileID: 0}
   firePoints:
   - {fileID: 9083608479110498951}
   - {fileID: 8926706536018469477}
@@ -545,6 +550,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1939245619601230, guid: d2f2f92c494bd1c41970791d8041c000,
     type: 3}
   launchForce: 1
+  ShiptwoFiring: {fileID: 8300000, guid: 37bf4cd1e7e5fff4e9d0d25df9dfd318, type: 3}
 --- !u!114 &6889072194790557583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,10 +567,9 @@ MonoBehaviour:
   currentHealth: 0
   damageTaken: 0
   immune: 0
-  healthText: {fileID: 0}
   respawnPoint: {x: 0, y: 0, z: 0}
-  sDamage: {fileID: 0}
-  auSource: {fileID: 0}
+  sDamage: {fileID: 8300000, guid: 84f47643e2bea3a448e4ce0a485b8728, type: 3}
+  auSource: {fileID: 1211667981521268675}
   playerAnimator: {fileID: 2348365420330181970}
   explosionEfx: {fileID: 8590898932773608726, guid: e646307317b0621479a43de6fbd50e09,
     type: 3}
@@ -599,6 +604,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &1211667981521268675
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725026469722094428}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7688365365766513925
 GameObject:
   m_ObjectHideFlags: 0

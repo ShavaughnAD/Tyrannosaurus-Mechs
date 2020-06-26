@@ -6,7 +6,6 @@ public class PlayerShip01Shoot : PlayerMovement
     public GameObject bulletPosition01;
     public GameObject bulletPosition02;
 
-    public AudioSource auSource;
     public AudioClip ShipOneFiring;
     public override void Update()
     {

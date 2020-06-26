@@ -3,7 +3,16 @@ guid: 57fd73eb5de32f540a429f71214dd2ed
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerRB: {instanceID: 0}
+  - shield: {instanceID: 0}
+  - chomp: {instanceID: 0}
+  - ShieldSkill: {fileID: 8300000, guid: 027cd167f84e5b646afc7339bca2f1dd, type: 3}
+  - SpeedSkill: {fileID: 8300000, guid: 9954bba7d5ce4234792d3d3c9f1746c3, type: 3}
+  - AuSource: {instanceID: 0}
+  - muzzleFlash: {instanceID: 0}
+  - chompAnim: {instanceID: 0}
+  - abilityIcon: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

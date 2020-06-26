@@ -6,11 +6,13 @@ public class PlayerShip03Shoot : PlayerMovement
     public GameObject projectilePrefab;
     public float launchForce = 700f;
 
+    public AudioClip ShiptwoFiring;
     public override void Update()
     {
         base.Update();
         if (Input.GetMouseButtonDown(0))
         {
+            auSource.PlayOneShot(ShiptwoFiring);
             LaunchProjectile();
         }
     }
