@@ -7,6 +7,7 @@ public class AstroidHealth : Health
     public GameObject damageFloater;
 
     public GameObject astroidLNoise;
+    public GameObject astroidForce;
 
     #region BlinkingEffect Variables
 
@@ -33,7 +34,7 @@ public class AstroidHealth : Health
         spriteRend.material = matBlink;
         if (currentHealth == 0)
         {
-            Death();
+            Death();           
         }
         else
         {
@@ -53,6 +54,7 @@ public class AstroidHealth : Health
             Instantiate(astroidLNoise, spawnP.position, Quaternion.identity);
             Destroy(gameObject);
         }
+        AForce();
     }
 
     void ResetMaterial()
@@ -66,4 +68,8 @@ public class AstroidHealth : Health
         floatingText.transform.GetChild(0).GetComponent<TextMesh>().text = damageTaken.ToString("F0");
     }
 
+    void AForce()
+    {
+        Instantiate(astroidForce, spawnP.position, Quaternion.identity);
+    }
 }

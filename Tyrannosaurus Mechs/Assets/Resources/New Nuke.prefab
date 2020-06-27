@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4970778874070978742}
   - component: {fileID: 3385795170559978821}
   - component: {fileID: 6333169710348071370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Nuke Script
   m_TagString: Nuke
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3802745532940195131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Nuke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 3802745534184810503}
   - component: {fileID: 3802745534184810497}
   - component: {fileID: 3802745534184810502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle Sys
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4981,7 +4981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8988653417197080748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnA
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}

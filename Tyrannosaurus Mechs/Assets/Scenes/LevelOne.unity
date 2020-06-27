@@ -2985,13 +2985,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2015518258, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
-      propertyPath: killScore
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2015518258, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1404670348}
+    - target: {fileID: 2015518258, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
+      propertyPath: spawnA
+      value: 
+      objectReference: {fileID: 8590411089985949313}
+    - target: {fileID: 2015518258, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
+      propertyPath: bossDeathNoise
+      value: 
+      objectReference: {fileID: 5741426334266158411, guid: 2d2e7c8099fea614c9bec7f955cdc90d,
+        type: 3}
     - target: {fileID: 1988959072326566, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
       propertyPath: m_Name
       value: Boss Placeholder
@@ -3042,3 +3047,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
+--- !u!4 &8590411089985949313 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 425564944340514747, guid: 2ce1fb9d977e03b49a1ce0113faf945e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8590411089985949312}
+  m_PrefabAsset: {fileID: 0}

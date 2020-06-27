@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6130477249390977368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 290710524035368146}
   - component: {fileID: 8136545862792466893}
   - component: {fileID: 4805908509971730694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DMG Power UP
   m_TagString: Damage
   m_Icon: {fileID: 0}

@@ -16,6 +16,9 @@ public class BossChangeState : Health
     public BossFireBullets bossFireBullets;
     public BossFireDoubleSpiral bossDoubleSpiral;
 
+    public Transform spawnA;
+    public GameObject bossDeathNoise;
+
     [Range(0.1f, 0.5f)]
     public float blinkEffectTime = 0.5f; //The lower this value, the faster the blink
     Material matBlink;
@@ -77,6 +80,7 @@ public class BossChangeState : Health
 
     void Death()
     {
+        Instantiate(bossDeathNoise, spawnA.position, Quaternion.identity);
         GameManager.gameManager.score += killScore;
         gameObject.SetActive(false);
         Invoke("LoadMenu", .5f);

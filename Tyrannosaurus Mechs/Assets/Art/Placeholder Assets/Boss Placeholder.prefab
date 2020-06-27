@@ -200,6 +200,7 @@ Transform:
   m_Children:
   - {fileID: 4629620492563178}
   - {fileID: 4055151358943464}
+  - {fileID: 425564944340514747}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -381,12 +382,43 @@ MonoBehaviour:
   currentHealth: 0
   damageTaken: 0
   immune: 0
-  killScore: 0
+  killScore: 200
   isBoss: 1
   stageOneHealth: 225
   stageTwoHealth: 100
   stageThreeHealth: 50
+  healthBar: {fileID: 0}
   bossFirePattern2: {fileID: 0}
   bossFireBullets: {fileID: 0}
   bossDoubleSpiral: {fileID: 0}
   blinkEffectTime: 0.5
+--- !u!1 &6178221911831017523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425564944340514747}
+  m_Layer: 0
+  m_Name: SpawnA
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &425564944340514747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6178221911831017523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.06, y: 0.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4803365131872970}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

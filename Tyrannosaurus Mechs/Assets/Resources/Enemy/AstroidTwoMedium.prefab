@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7831936370211232544}
   - component: {fileID: 6438796974263282192}
   - component: {fileID: 1135335568444713758}
+  - component: {fileID: 5653482674173613632}
   m_Layer: 0
   m_Name: AstroidTwoMedium
   m_TagString: Enemy
@@ -96,7 +97,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.50138855, y: 0.44568062}
@@ -124,6 +125,8 @@ MonoBehaviour:
   damageFloater: {fileID: 3075385323352132901, guid: cb2a9289b0a99094d901560b198b0780,
     type: 3}
   astroidLNoise: {fileID: 9053399911124205958, guid: e6a0390ed8f32754495f8548a97dea96,
+    type: 3}
+  astroidForce: {fileID: 484989781318524022, guid: cdb0548651a9a2748a4eb82bf28c81a2,
     type: 3}
   blinkEffectTime: 0.5
 --- !u!114 &6438796974263282192
@@ -235,6 +238,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &5653482674173613632
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383461635493478713}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4550235462939357427
 GameObject:
   m_ObjectHideFlags: 0
