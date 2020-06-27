@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Health playerHealth;
     public enum Ability
     {
-        Shield, Speedy, Chomp
+        Shield, Speedy, Chomp, Blink
     }
     public Ability ability;
     public Rigidbody2D playerRB;
@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogError("Audio Source was null, adding one to " + gameObject.name);
             gameObject.AddComponent<AudioSource>();
+            auSource = GetComponentInChildren<AudioSource>();
         }
         auSource.clip = skillSoundEffect;
         playerRB = GetComponent<Rigidbody2D>();
@@ -122,7 +123,10 @@ public class PlayerMovement : MonoBehaviour
 
         #region Ability
 
-        abilityIcon.fillAmount = cooldown / coolDownTimer;
+        if(abilityIcon != null)
+        {
+            abilityIcon.fillAmount = cooldown / coolDownTimer;
+        }
 
         cooldown += 1 * Time.deltaTime;
         if (cooldown >= coolDownTimer)
@@ -167,6 +171,10 @@ public class PlayerMovement : MonoBehaviour
                 playerHealth.immune = true;
                 chompAnim.SetBool("Crunch", true);
                 Invoke("StopAbility", abilityActiveTime);
+                break;
+
+            case Ability.Blink:
+
                 break;
 
         }

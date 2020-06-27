@@ -1878,7 +1878,6 @@ GameObject:
   - component: {fileID: 2853266360083088013}
   - component: {fileID: 2853266360083088012}
   - component: {fileID: 2853266360083088014}
-  - component: {fileID: 5702753855291185304}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -2100,26 +2099,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: f38ade7e83a89204ebb349c1d2f6cbd7, type: 2}
---- !u!114 &5702753855291185304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2853266360083088007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1a6225a6f67be74688510873d2cde53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalColor: {r: 0, g: 0, b: 0, a: 0}
-  clickedColor: {r: 0, g: 0, b: 0, a: 0}
-  moveUp: {fileID: 0}
-  moveDown: {fileID: 0}
-  moveLeft: {fileID: 0}
-  moveRight: {fileID: 0}
-  useAbility: {fileID: 0}
-  pauseGame: {fileID: 0}
 --- !u!1 &2853266360100757218
 GameObject:
   m_ObjectHideFlags: 0

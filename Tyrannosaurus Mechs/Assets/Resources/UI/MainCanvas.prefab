@@ -4260,7 +4260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2970481, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.6320754, g: 0, b: 0.6320754, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4867,8 +4867,8 @@ MonoBehaviour:
       type: 3}
   - shipObj: {fileID: 1512782934554904, guid: 0dfb194d42bd7364f901f57d4a0831a5, type: 3}
     shipName: Ptera
-    shipDescription: Beam Shotta
-    shipSprite: {fileID: 21300000, guid: 8428343b59e4e834899e99b2695b1305, type: 3}
+    shipDescription: Shoots a Laser Beam
+    shipSprite: {fileID: 21300000, guid: b784d322598fe9a4a990bd5b2a4a9086, type: 3}
     shipAbilityIcon: {fileID: -6178195556770631740, guid: 94ba1c74cd4638b46a852062daf6d5e9,
       type: 3}
 --- !u!114 &1347311870327520304

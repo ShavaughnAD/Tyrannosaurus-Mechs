@@ -78,5 +78,6 @@ public class KeyBindingSystem : MonoBehaviour
             PlayerPrefs.SetString(key.Key, key.Value.ToString());
         }
         PlayerPrefs.Save();
+        gameObject.SetActive(false);
     }
 }
