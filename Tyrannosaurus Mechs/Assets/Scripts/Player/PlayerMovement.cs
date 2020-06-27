@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Health playerHealth;
     public enum Ability
     {
-        Shield, Speedy, Chomp, Blink
+        Shield, Speedy, Chomp, Squall
     }
     public Ability ability;
     public Rigidbody2D playerRB;
@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject shield;
     public GameObject chomp;
+    public GameObject squallBlast;
+    public Transform squallBlastFirePoint;
 
     public AudioClip skillSoundEffect;
     [HideInInspector] public AudioSource auSource;
@@ -37,10 +39,6 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem muzzleFlash;
 
     public Animator chompAnim;
-
-    public string shipName;
-    [TextArea]
-    public string shipDescription;
 
     public Image abilityIcon;
 
@@ -60,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
         auSource.clip = skillSoundEffect;
         playerRB = GetComponent<Rigidbody2D>();
         playerHealth = GetComponent<Health>();
-        abilityIcon = GameObject.FindGameObjectWithTag("AbilityIcon").GetComponent<Image>();
     }
 
     void Start()
@@ -80,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
                 chompAnim = GetComponentInChildren<Animator>();
             }
         }
+        abilityIcon = GameObject.FindGameObjectWithTag("AbilityIcon").GetComponent<Image>();
     }
 
     public virtual void Update()
@@ -123,10 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
         #region Ability
 
-        if(abilityIcon != null)
-        {
-            abilityIcon.fillAmount = cooldown / coolDownTimer;
-        }
+        abilityIcon.fillAmount = cooldown / coolDownTimer;
 
         cooldown += 1 * Time.deltaTime;
         if (cooldown >= coolDownTimer)
@@ -173,12 +168,17 @@ public class PlayerMovement : MonoBehaviour
                 Invoke("StopAbility", abilityActiveTime);
                 break;
 
-            case Ability.Blink:
-
+            case Ability.Squall:
+                cooldown = 0;
+                skillReady = false;
+                Instantiate(squallBlast, squallBlastFirePoint.position, squallBlastFirePoint.rotation);
                 break;
 
         }
-        auSource.PlayOneShot(skillSoundEffect);
+        if(auSource != null)
+        {
+            auSource.PlayOneShot(skillSoundEffect);
+        }
     }
 
     void StopAbility()
